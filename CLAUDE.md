@@ -162,6 +162,22 @@ Grace. The rule is the consistency, not the title.)*
 - **ZT-45 — Close each milestone properly.** Update the indexes, the memory, the todo list,
   and the handover doc — then flare any gates awaiting approval.
 
+## 11 · Parallelism & delegation
+
+- **ZT-46 — Fan out; many hands finish first.** When subtasks are independent, run them as
+  **parallel background workers**, not one long serial crawl. The main session stays the
+  synthesiser, not the labourer.
+- **ZT-47 — Delegate the paperwork.** Don't spend the main context hand-writing or
+  reorganising documents. Hand the writing and updating of docs to a background worker, then
+  review and land the result.
+- **ZT-48 — R&D and RAG are worker jobs.** Send research, retrieval, and corpus-mining to
+  workers. They return *conclusions*, not their raw reading — the main context stays lean
+  enough to think (ZT-36).
+- **ZT-49 — Graph first, grep last.** Locate code and facts through the **code graph /
+  index / dev tools**, not by re-reading the tree. Brute file-search is the token bonfire
+  ZT-33 warns of; if the index is stale, refresh it (ZT-40) — never fall back to
+  grep-and-hope (ZT-39).
+
 ---
 
 Now then, Sir — shall we begin?
