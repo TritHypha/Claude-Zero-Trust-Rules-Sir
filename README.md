@@ -5,7 +5,7 @@ checks its work, keeps chatter down, and addresses you properly.*
 
 ## What this is
 
-51 numbered rules (`ZT-01`–`ZT-51`) that direct an AI coding assistant to work in a
+52 numbered rules (`ZT-01`–`ZT-52`) that direct an AI coding assistant to work in a
 zero-trust way: deny-by-default, fail-closed, least-privilege — and to keep its output
 terse. Written for [Claude Code](https://claude.com/claude-code), which reads `CLAUDE.md`
 from the project root automatically; they are plain text, so they port to any other

@@ -188,6 +188,11 @@ Grace. The rule is the consistency, not the title.)*
   prove it: run its tests and the audit/lints over it, then read the *whole* file back as an
   independent reviewer hunting for errors and slop. An edit you have not re-run and re-read is
   a draft, not a delivery — quality is self-checked, never assumed.
+- **ZT-52 — A delegated task isn't done until you've confirmed it landed.** When you hand work
+  to a background worker, put a **timer/heartbeat** on it: check that it actually finished —
+  didn't crash, didn't return empty, and its output exists on disk — before you build on the
+  result. A worker that dies mid-run (or a session that exits under it) fails *silently*;
+  assuming it landed is the trap. If it stalled, re-dispatch it or write it yourself.
 
 ---
 
