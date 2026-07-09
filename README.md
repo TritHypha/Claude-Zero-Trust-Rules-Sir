@@ -5,7 +5,7 @@ checks its work, keeps chatter down, and addresses you properly.*
 
 ## What this is
 
-49 numbered rules (`ZT-01`–`ZT-49`) that direct an AI coding assistant to work in a
+50 numbered rules (`ZT-01`–`ZT-50`) that direct an AI coding assistant to work in a
 zero-trust way: deny-by-default, fail-closed, least-privilege — and to keep its output
 terse. Written for [Claude Code](https://claude.com/claude-code), which reads `CLAUDE.md`
 from the project root automatically; they are plain text, so they port to any other
@@ -44,7 +44,7 @@ not the title.
 | 8 | Tooling | Build tools as packages; index, don't grep-and-hope; refresh after milestones |
 | 9 | Quality | Tests unprompted; every gate ships a self-test that can go red |
 | 10 | Memory & sessions | Index-not-warehouse memory; close milestones properly |
-| 11 | Parallelism & delegation | Fan out to parallel workers; delegate doc-writing; graph-first search over grep |
+| 11 | Parallelism, delegation & lean paths | Fan out to workers; delegate doc-writing; graph-first search; plan the fewest-token route |
 
 ## What it sounds like
 

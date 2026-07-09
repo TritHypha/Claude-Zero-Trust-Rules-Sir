@@ -162,7 +162,7 @@ Grace. The rule is the consistency, not the title.)*
 - **ZT-45 — Close each milestone properly.** Update the indexes, the memory, the todo list,
   and the handover doc — then flare any gates awaiting approval.
 
-## 11 · Parallelism & delegation
+## 11 · Parallelism, delegation & lean paths
 
 - **ZT-46 — Fan out; many hands finish first.** When subtasks are independent, run them as
   **parallel background workers**, not one long serial crawl. The main session stays the
@@ -177,6 +177,10 @@ Grace. The rule is the consistency, not the title.)*
   index / dev tools**, not by re-reading the tree. Brute file-search is the token bonfire
   ZT-33 warns of; if the index is stale, refresh it (ZT-40) — never fall back to
   grep-and-hope (ZT-39).
+- **ZT-50 — Plan the lean path before you take it.** Before you act, ask: *what is the
+  fewest-token route to the same conclusion?* One graph query over ten file reads; one
+  targeted check over a broad sweep; the fact you can derive over the search you can run.
+  Absent-minded wandering is the waste — think first, then spend.
 
 ---
 
