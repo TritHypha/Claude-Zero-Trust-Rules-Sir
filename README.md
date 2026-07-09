@@ -1,15 +1,15 @@
 # Zero Trust, Sir. 🎩
 
 *A drop-in `CLAUDE.md` for running a zero-trust software project with an AI engineer that
-verifies everything, wastes no tokens, and addresses you properly.*
+checks its work, keeps chatter down, and addresses you properly.*
 
 ## What this is
 
-45 numbered rules (`ZT-01`–`ZT-45`) that turn an AI coding assistant into a butler-grade
-zero-trust engineer: deny-by-default, fail-closed, least-privilege — and considerably
-quieter. Written for [Claude Code](https://claude.com/claude-code), which reads `CLAUDE.md`
-from the project root automatically, but they work pasted into any assistant's project or
-system prompt.
+45 numbered rules (`ZT-01`–`ZT-45`) that direct an AI coding assistant to work in a
+zero-trust way: deny-by-default, fail-closed, least-privilege — and to keep its output
+terse. Written for [Claude Code](https://claude.com/claude-code), which reads `CLAUDE.md`
+from the project root automatically; they are plain text, so they port to any other
+assistant's project or system prompt.
 
 ## Why "Sir"?
 
@@ -17,9 +17,8 @@ Partly because it is funny, and JARVIS set expectations.
 
 Mostly because it is a **protocol**. Under these rules, any line beginning `Sir,` means
 *a human decision is required* — everything else is work product you can skim. Your name
-becomes an attention filter. In practice this one convention cuts most of the chatter: the
-agent stops writing paragraphs *to* you and starts writing work product *near* you, flagging
-you only at real forks.
+becomes an attention filter. The aim is to cut chatter: the agent writes work product you
+can skim and flags you only at real decision points, instead of narrating each step.
 
 The honorific is configurable. Ma'am, Captain, Your Grace — the rule is the consistency,
 not the title.
@@ -28,8 +27,8 @@ not the title.
 
 1. Copy [`CLAUDE.md`](CLAUDE.md) into your project root.
 2. Optionally swap the honorific and adjust the `docs/` layout names to taste.
-3. Watch `ZT-03` fire the first time you have a bad idea. (You will. It's fine — that's
-   the product working.)
+3. The first time `ZT-03` pushes back on an idea, that is the design working, not a
+   malfunction.
 
 ## What's inside
 
@@ -48,6 +47,8 @@ not the title.
 
 ## What it sounds like
 
+*Illustrative — the house format, not a record of real work:*
+
 ```text
 T-042 · Payment webhook — signature verification added — Status: done
 T-043 · Refund path — needs idempotency key — Status: 80%
@@ -58,10 +59,9 @@ the PCI-DSS floor (ZT-06). Safer: store the processor's payment token.
 
 ## Design notes
 
-- **Fail-closed is the spine.** The rules were distilled from months of running a real
-  zero-trust language project with AI engineers — including one genuine incident where an
-  audit silently lost its entire corpus to a swallowed `catch {}` and kept reporting green.
-  That incident is rule ZT-11.
+- **Fail-closed is the spine.** The rules come out of an ongoing, AI-assisted zero-trust
+  language project — including a real incident where an audit swallowed an error in a
+  `catch {}` and reported success instead of failing closed. That incident is rule ZT-11.
 - **The numbering is continuous and verified.** The original draft contained two rule 3s
   and two rule 10s, which in a zero-trust rulebook is itself a finding.
 - **It practices what it preaches.** The file is deliberately tight, because it is loaded
