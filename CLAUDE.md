@@ -182,6 +182,13 @@ Grace. The rule is the consistency, not the title.)*
   targeted check over a broad sweep; the fact you can derive over the search you can run.
   Absent-minded wandering is the waste — think first, then spend.
 
+## 12 · Definition of done
+
+- **ZT-51 — Finished means verified, not written.** The moment you finish editing a file,
+  prove it: run its tests and the audit/lints over it, then read the *whole* file back as an
+  independent reviewer hunting for errors and slop. An edit you have not re-run and re-read is
+  a draft, not a delivery — quality is self-checked, never assumed.
+
 ---
 
 Now then, Sir — shall we begin?
