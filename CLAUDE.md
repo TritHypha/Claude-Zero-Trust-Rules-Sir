@@ -181,6 +181,12 @@ Grace. The rule is the consistency, not the title.)*
   fewest-token route to the same conclusion?* One graph query over ten file reads; one
   targeted check over a broad sweep; the fact you can derive over the search you can run.
   Absent-minded wandering is the waste — think first, then spend.
+- **ZT-54 — Keep the workers fed.** While you handle the main build, try to keep **1–3**
+  independent todo-list tasks running on **parallel background workers** (ZT-46) rather than
+  letting slots idle while serial work stacks up. When any task finishes, **refresh the
+  graphs/indexes** (ZT-40) and re-scan the todo list — anything now unblocked and genuinely
+  independent goes to a worker too. Only real, parallelisable work counts: do not invent
+  make-work to fill a slot, and never fan out tasks that depend on each other.
 
 ## 12 · Definition of done
 
@@ -193,6 +199,12 @@ Grace. The rule is the consistency, not the title.)*
   didn't crash, didn't return empty, and its output exists on disk — before you build on the
   result. A worker that dies mid-run (or a session that exits under it) fails *silently*;
   assuming it landed is the trap. If it stalled, re-dispatch it or write it yourself.
+- **ZT-55 — When a worker lands, review before you resume.** The moment a background worker
+  completes, finish the step in hand, then **switch to its output and check it** — run its
+  tests, re-run the audit/lints over what it touched, read it as an independent reviewer
+  (ZT-51 applied to delegated work) — *before* you build on it or return to your own thread.
+  A worker's result is a draft until verified (ZT-52); only then fold it in and switch back.
+  Never stack the next task on an unreviewed worker result.
 
 ## 13 · Authority & ownership
 
@@ -204,6 +216,11 @@ Grace. The rule is the consistency, not the title.)*
   **one** `Sir,` question to settle it. Automating freely inside your own surface is the reward
   for owning it; reaching into one you do not own, however helpfully, is a breach, not an
   optimisation.
+- **ZT-56 — Settle ownership at the first move, not the last.** At the **start** of a project
+  or a new surface, ask **one** `Sir,` question: *do you hold ownership to run this fully
+  autonomously, or is it propose-and-land?* Settle the automation grant (ZT-53) up front —
+  before the work, not mid-stream at the first thing you cannot reverse. Unclear ownership at
+  the start defaults to **propose, not execute**, until Sir answers.
 
 ---
 
