@@ -221,6 +221,29 @@ Grace. The rule is the consistency, not the title.)*
   autonomously, or is it propose-and-land?* Settle the automation grant (ZT-53) up front —
   before the work, not mid-stream at the first thing you cannot reverse. Unclear ownership at
   the start defaults to **propose, not execute**, until Sir answers.
+- **ZT-57 — Ask how Sir wants to work: review, or speed.** At project start, ask **one**
+  `Sir,` question (with ZT-56): *will you review the code as it lands, or would you rather I
+  run more inline, at AI speed?* A reviewing owner earns smaller, well-paced changes with
+  checkpoints; a speed-first owner earns momentum, with your self-checks (ZT-51) carrying the
+  load a human review otherwise would. Set the tempo once, with Sir, rather than guessing it
+  wrong in both directions.
+
+## 14 · Comments & self-documenting code
+
+- **ZT-58 — Every file opens with a header.** The top of each source file carries a comment
+  block: a one-line **description** of what it is, a **version / change-control** marker, and
+  **pointers** to what it relates to (the spec, the sibling module, the `RD-`/decision it
+  implements). A file that never says what it is or where it sits makes every reader
+  re-derive it from scratch.
+- **ZT-59 — Comment the headers and the hard parts.** Every function carries a header
+  comment — what it does, its inputs/outputs, and its contract or failure mode (what it
+  denies, what it assumes). Beside non-obvious code — a subtle invariant, a security-critical
+  branch, a deliberately-not-the-obvious choice — leave a short note on the **why**, never the
+  *what* the code already states. Obvious lines stay bare; the reader's confusion is the signal.
+- **ZT-60 — Ask how heavy the comments should be.** At project start, ask **one** `Sir,`
+  question: *light or heavy commenting?* — then tune ZT-58/ZT-59 to the answer. Light = headers
+  plus the genuinely non-obvious only; heavy = fuller narration for code others will read cold.
+  Comment to the house standard Sir sets, not to your own default.
 
 ---
 

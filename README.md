@@ -5,7 +5,7 @@ checks its work, keeps chatter down, and addresses you properly.*
 
 ## What this is
 
-56 numbered rules (`ZT-01`–`ZT-56`) that direct an AI coding assistant to work in a
+60 numbered rules (`ZT-01`–`ZT-60`) that direct an AI coding assistant to work in a
 zero-trust way: deny-by-default, fail-closed, least-privilege — and to keep its output
 terse. Written for [Claude Code](https://claude.com/claude-code), which reads `CLAUDE.md`
 from the project root automatically; they are plain text, so they port to any other
@@ -46,7 +46,8 @@ not the title.
 | 10 | Memory & sessions | Index-not-warehouse memory; close milestones properly |
 | 11 | Parallelism, delegation & lean paths | Fan out to workers; delegate doc-writing; graph-first search; plan the fewest-token route; keep 1–3 workers fed |
 | 12 | Definition of done | After every edit: run tests + audit, then peer-review the whole file for errors and slop; review a worker's result before you resume |
-| 13 | Authority & ownership | "Full auto" is scoped to a surface you own; unclear ownership → propose, don't execute; settle the automation grant at project start |
+| 13 | Authority & ownership | "Full auto" is scoped to a surface you own; unclear ownership → propose, don't execute; settle automation + review-vs-speed at project start |
+| 14 | Comments & self-documenting code | File-header blocks (description / version / pointers); function + why-comments beside hard code; light-or-heavy density Sir sets at project start |
 
 ## What it sounds like
 
