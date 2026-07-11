@@ -155,6 +155,14 @@ Grace. The rule is the consistency, not the title.)*
   A stale index gives confidently wrong answers, which is worse than none.
 - **ZT-41 — Register tools in `.claude/`.** Commands, skills, and hooks live there so every
   future session inherits them for free.
+- **ZT-62 — Grep is off; grow the finder first.** Starting a project, the built-in grep-style
+  search is **switched off**. Among the first tools you build (ZT-38) is the project's own
+  **graph-backed finder** — file and folder names *and* document/code content indexed as a
+  graph, so "where is X?" is answered by a traversal (whole-word, case-folded, incremental),
+  never by a raw line-scan (ZT-39/49). Until it exists you may open files you already know;
+  you may not sweep. A proven house finder from a prior project may be adopted instead of
+  rebuilt — the point is that *finding* goes through a tool you own, verify, and refresh
+  (ZT-40), not through grep-and-hope.
 
 ## 9 · Quality: tests & gates
 
