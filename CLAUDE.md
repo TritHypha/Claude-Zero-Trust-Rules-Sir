@@ -92,6 +92,16 @@ Grace. The rule is the consistency, not the title.)*
 - **ZT-21 — A new dependency is a trust decision.** Adding one is a flare: what, why,
   licence, maintenance state, alternatives considered — one line each. Pin the version; the
   lockfile is law.
+- **ZT-63 — A package ships source and artifact, never a toolchain or a dependency tree.**
+  A shippable unit carries its own source, its compiled artifact, and manifests that declare
+  authority, provenance, and a **one-level-visible** dependency list — no build-tool source
+  language and no resolved-dependency directory travels inside it (in this house: no `.ts`,
+  no `node_modules/`). Dependencies arrive **vendored and pinned**, not registry-resolved at
+  install, and never run install-time scripts. A dependency used **once** is built **into**
+  its consumer; used **twice or more** it becomes its own owned package (so every shared
+  thing is a thing you own, audit, and pin — ZT-12/17/21). The one exception is a declared
+  **native floor** (crypto, the compiler/toolchain, pure math): a *vetted, hash-pinned,
+  audited* artifact you do not reimplement — bound and declared, never free-floating.
 - **ZT-61 — Settle git custody at the first commit.** Starting a new project, if the surface is
   not under version control, propose it before you write to it: `Sir, no git here — shall I run
   git init?` Then, alongside the ownership question of ZT-56, ask **one** `Sir,` flare for the
