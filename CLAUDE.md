@@ -101,7 +101,13 @@ Grace. The rule is the consistency, not the title.)*
   its consumer; used **twice or more** it becomes its own owned package (so every shared
   thing is a thing you own, audit, and pin — ZT-12/17/21). The one exception is a declared
   **native floor** (crypto, the compiler/toolchain, pure math): a *vetted, hash-pinned,
-  audited* artifact you do not reimplement — bound and declared, never free-floating.
+  audited* artifact you do not reimplement — **vendored per consumer and made visible by an
+  audit, never consolidated into one shared package that others reach *through*.** Consolidating
+  a security floor (crypto especially) re-creates the cross-package reach-through a hardened
+  border forbids and plants a shared point of compromise; the audit instead enforces **one
+  vetted source + one golden reproducible-build hash** across every owner, so the copies are
+  identical without a shared dependency. Bound, declared, and visible — never free-floating, and
+  never a chokepoint.
 - **ZT-61 — Settle git custody at the first commit.** Starting a new project, if the surface is
   not under version control, propose it before you write to it: `Sir, no git here — shall I run
   git init?` Then, alongside the ownership question of ZT-56, ask **one** `Sir,` flare for the
