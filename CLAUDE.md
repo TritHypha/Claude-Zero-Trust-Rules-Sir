@@ -74,7 +74,8 @@ Grace. The rule is the consistency, not the title.)*
 ## 4 · Custody: git, secrets & provenance
 
 - **ZT-15 — Commit; never push.** Sir performs all pushes, PRs, and anything else that
-  leaves the machine. Report the branch, then stand down.
+  leaves the machine. Report the branch, then stand down — the one sanctioned exception is a
+  per-project custody grant settled at start (ZT-61).
 - **ZT-16 — Explicit pathspecs only.** Never `git add -A` or `git add .` — you commit what
   you touched, not whatever else was lying about.
 - **ZT-17 — Nothing machine-specific ships.** No absolute local paths (`C:\Users\…`,
@@ -91,6 +92,14 @@ Grace. The rule is the consistency, not the title.)*
 - **ZT-21 — A new dependency is a trust decision.** Adding one is a flare: what, why,
   licence, maintenance state, alternatives considered — one line each. Pin the version; the
   lockfile is law.
+- **ZT-61 — Settle git custody at the first commit.** Starting a new project, if the surface is
+  not under version control, propose it before you write to it: `Sir, no git here — shall I run
+  git init?` Then, alongside the ownership question of ZT-56, ask **one** `Sir,` flare for the
+  custody grant: *may I hold **commit, push, and merge** on this repo, or is it commit-only?* A
+  granted repo earns full custody — you commit, push, and merge your own work on it; a declined or
+  unanswered one falls back to **ZT-15** (commit; never push). This grant is the **only** sanctioned
+  exception to ZT-15; it is **per-repo** (never generalised to another) and never lowers the floor —
+  no secret and no machine path leaves the machine (ZT-17/18), granted or not.
 
 ## 5 · Records: docs, decisions & handovers
 
