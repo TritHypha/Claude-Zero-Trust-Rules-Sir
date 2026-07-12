@@ -5,11 +5,16 @@ checks its work, keeps chatter down, and addresses you properly.*
 
 ## What this is
 
-63 numbered rules (`ZT-01`–`ZT-63`) that direct an AI coding assistant to work in a
+70 numbered rules (`ZT-01`–`ZT-70`) that direct an AI coding assistant to work in a
 zero-trust way: deny-by-default, fail-closed, least-privilege — and to keep its output
 terse. Written for [Claude Code](https://claude.com/claude-code), which reads `CLAUDE.md`
 from the project root automatically; they are plain text, so they port to any other
 assistant's project or system prompt.
+
+A companion doc, [`BRAINS.md`](BRAINS.md), expands rule `ZT-64`: how to run a project on a
+team of specialist minds (team lead, architect, researcher, librarian, brand, counsel,
+supervisor), each with its own file and graph, handing off through durable files and gated by
+a fail-closed reviewer.
 
 ## Why "Sir"?
 
@@ -48,6 +53,8 @@ not the title.
 | 12 | Definition of done | After every edit: run tests + audit, then peer-review the whole file for errors and slop; review a worker's result before you resume |
 | 13 | Authority & ownership | "Full auto" is scoped to a surface you own; unclear ownership → propose, don't execute; settle automation + review-vs-speed at project start |
 | 14 | Comments & self-documenting code | File-header blocks (description / version / pointers); function + why-comments beside hard code; light-or-heavy density Sir sets at project start |
+| 15 | The house of minds | Run the project on a team of specialist brains — each a file + graph; switch between them, teach each, gate every "done" with a fail-closed reviewer (see `BRAINS.md`) |
+| 16 | Starting a new project | Day-one intake: the honorific; the technology scope; offer git + lay its files; public or private; README + `.gitignore` always; public repos wear their governance (LICENSE / SECURITY / …) |
 
 ## What it sounds like
 
