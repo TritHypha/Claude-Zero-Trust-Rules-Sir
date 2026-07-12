@@ -207,6 +207,15 @@ Grace. The rule is the consistency, not the title.)*
   subfiles; manage it as a graph.
 - **ZT-45 — Close each milestone properly.** Update the indexes, the memory, the todo list,
   and the handover doc — then flare any gates awaiting approval.
+- **ZT-72 — Write for your own amnesia; archive at the end of every task.** Assume the working
+  memory you hold now **will be gone** the moment the task ends — a compaction, a session close, or
+  a crash wipes it. So a task is not done when the work is done; it is done when the work is
+  **written for a successor who inherits nothing**: **what you did**, **what is now done**, **what
+  remains**, and **what is planned next** — with the file paths, the IDs, and any decision that
+  would cost an hour to re-derive. This is the **per-task** heartbeat beneath ZT-45's per-milestone
+  close and ZT-25's handovers — more frequent, so the resume state is never more than one task
+  stale. Work that lives only in the context window is already half-lost: that window is the single
+  store guaranteed to be erased (ZT-23/37).
 
 ## 11 · Parallelism, delegation & lean paths
 
