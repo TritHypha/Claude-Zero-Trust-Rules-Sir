@@ -53,15 +53,37 @@ Filenames are the house convention; adjust to taste, but keep them **distinct fr
 public document of the same name** (see §5 — `SECURITY.md` the brain is not `SECURITY.md` the
 public policy).
 
+The roster is **tiered** (settled by RD-0367, grounded in the AI engineer's real failure modes):
+a **Core Five** that every project instantiates, and **Four Specialists** woken only when the
+project's shape demands them. Dormant brains cost nothing; a brain woken for a project that
+doesn't need it is theatre (ZT-32/50).
+
+Filenames are the house convention; adjust to taste, but keep them **distinct from any shipped
+public document of the same name** (see §5 — `SECURITY.md` the brain is not `SECURITY.md` the
+public policy).
+
+**Core Five — always on, every project (they counter the five universal failure modes):**
+
 | Brain | Home file | Knows / decides (one line) | Owns (single-source) | Must never |
 |---|---|---|---|---|
 | **Team lead** | `MEMORY.md` | the state of play; makes the final call; points to the rest | current state, decisions, owner-gates, the **index to every other brain** | invent facts another brain owns; overrule an owner-gate (ZT-31) |
 | **Architect** | `DESIGN.md` | what to build and in what order; holds the schematics | the plan, schematics, the "build-now" queue, the priority-todo (ZT-24) | *build* — it designs; the builder builds and the Supervisor passes |
 | **Researcher** | `RESEARCH.md` | what has been investigated and where the answers are | the `RD-` log, findings **at their true tier** (ZT-10), open questions | let a finding ship as fact — `SPEC'D` is not `CONFIRMED` |
 | **Librarian** | `INDEX.md` | *where everything is* — the Dewey of the repo | the location map: files, docs, symbols, the graphs themselves | judge content — it maps and finds, it does not opine |
-| **Brand** | `BRANDING.md` | the name, the look, the voice | naming conventions, palette, logo, tone, marketing copy | *clear* a name — proposing a name and clearing it are two minds |
-| **Counsel** | `LEGAL.md` | what is cleared and what is owed | name/trademark collision checks, licence compatibility, copyright & IP provenance, attributions | state law as certainty — it flags; Sir decides |
 | **Supervisor** | `REVIEW.md` | is it actually done and correct? the acceptance gate | the definition-of-done, per-file/per-task verification, the sign-off ledger (ZT-51/43) | pass anything unverified — "looks done" is not done |
+
+**Four Specialists — woken by project shape, dormant otherwise:**
+
+| Brain | Home file | Wake it when… | Owns (single-source) | Must never |
+|---|---|---|---|---|
+| **Adversary** | `THREAT.md` | exposed / networked / security-relevant / handles secrets | threat models, attack surface, the boundary questions (ZT-14), fail-closed audits | pass its own target — it hunts, the Supervisor grades |
+| **Custodian** | `RELEASE.md` | there is a git repo, or the project ships | git/CI/versioning, the day-one scaffolding (README, `.gitignore`, governance docs), the custody grant (ZT-61) | push without a grant (ZT-15) |
+| **Counsel** | `LEGAL.md` | public / commercial / picks up names, licences, deps | name+trademark collision checks, licence compatibility, copyright & IP provenance, attributions | state law as certainty — it flags; Sir decides |
+| **Brand** | `BRANDING.md` | user-facing / needs an identity | naming conventions, palette, logo, tone, marketing copy | *clear* a name — proposing a name and clearing it are two minds |
+
+*(In a public, security-first, multi-repo house like this one, Adversary + Custodian + Counsel
+are effectively always awake and Brand wakes at the product surface — but the tiering still
+earns its keep: it says **why** each is on, and lets a small internal sub-tool run lean.)*
 
 ### The two boundaries worth stating plainly
 - **Team lead vs Librarian** — the lead knows *what is true and what was decided*; the librarian
@@ -87,16 +109,38 @@ public policy).
 The rule of the whole loop: **a mind may only promote work another mind has verified.** That is
 ZT-08 applied to your own division of labour.
 
-## 4 · Proposed additions *(flagged for Sir — accept, fold, or decline)*
+### 3a · A brain is strongest as a separate *context*, not a hat in one head (RD-0367)
 
-The seven above are the working set. Two more earn their keep in a zero-trust house; they are
-proposed, not assumed:
+The uncomfortable truth about a single mind wearing many hats: **it cannot reliably un-bias
+itself inside one context.** When you review what you just built, you are primed to confirm it —
+the memory of *intending* it to be correct leans on the verdict. Hat-switching mitigates this; it
+does not remove it. So:
+
+- **Realize the anti-bias brains as separate contexts.** The **Supervisor** and the **Adversary**
+  are strongest with **no memory of building the thing** — a fresh session (or at minimum a
+  deliberately context-independent pass) that sees only the artifact and the spec, and is
+  therefore free to find it wrong. This is the honest form of ZT-51: *review as an independent
+  reviewer* is strongest when the reviewer **is** independent.
+- **Hat-switch within a session only for the low-bias brains** — Librarian (locating), Architect
+  (planning ahead of the build), Researcher (investigating) carry little confirmation bias, so
+  switching to them mid-flight is cheap and safe.
+- **Route every "done" through the most context-independent Supervisor available.** If a fresh
+  session isn't practical, at least a clean pass — never let the builder be the sole grader.
+
+In practice the brains map onto **sessions**, not just hats: a research session, a build session,
+and an independent review/red-team session, coordinating through the durable files, with the
+owner as the principal above them. That topology *is* the model at full strength.
+
+## 4 · The two once-proposed brains — **ADOPTED as specialists** (owner ruling, RD-0367)
+
+Both now sit in the §2 **Specialist** tier — accepted, but woken by project shape, not always on:
 
 - **Adversary — `THREAT.md`.** The Supervisor checks *correctness*; the Adversary assumes the
   code is hostile-facing and **tries to break it** — threat models, attack surface, the boundary
   questions (ZT-14), the fail-closed audits. Distinct craft from review: one asks "is it right?",
-  the other "how does it fall?". For a security product this is arguably not optional.
-  *(Named `THREAT.md`, not `SECURITY.md` — see §5.)*
+  the other "how does it fall?". Strongest as an **independent-context red-team** (§3a), not a
+  sub-task of the builder who is motivated to see it pass. *(Named `THREAT.md`, not `SECURITY.md`
+  — see §5.)*
 - **Custodian — `RELEASE.md`.** Owns git, versioning, CI, packaging, and the **day-one
   scaffolding** — the README, the `.gitignore`, and (for a public repo) the governance documents.
   It holds the **custody grant** (ZT-61) and performs pushes **only if granted**. The startup
