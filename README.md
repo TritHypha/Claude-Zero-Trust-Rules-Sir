@@ -5,7 +5,7 @@ checks its work, keeps chatter down, and addresses you properly.*
 
 ## What this is
 
-70 numbered rules (`ZT-01`–`ZT-70`) that direct an AI coding assistant to work in a
+71 numbered rules (`ZT-01`–`ZT-71`) that direct an AI coding assistant to work in a
 zero-trust way: deny-by-default, fail-closed, least-privilege — and to keep its output
 terse. Written for [Claude Code](https://claude.com/claude-code), which reads `CLAUDE.md`
 from the project root automatically; they are plain text, so they port to any other
@@ -42,7 +42,7 @@ not the title.
 | 1 | The Sir Protocol | `Sir,` = human decision required; canonical flare phrases; pushback is a duty |
 | 2 | Mission & scope | Production quality from commit one; a security floor; a one-sentence scope gate |
 | 3 | Zero-trust core | ALLOW/HOLD/DENY, unknown ≠ yes; claims report their true tier; gates fail closed |
-| 4 | Custody | Commit-don't-push (unless a per-project custody grant); settle git commit/push/merge custody at project start; no secrets; no machine paths; refs point at reality; deps are trust decisions; a package ships source + artifact, never a toolchain or a dependency tree |
+| 4 | Custody | Commit-don't-push (unless a per-project custody grant); settle git commit/push/merge custody at project start; no secrets; no machine paths; refs point at reality; deps are trust decisions; a package ships source + artifact, never a toolchain or a dependency tree; a human is never the key courier — mint, deliver, and rotate by machine |
 | 5 | Records | `docs/` as project memory; stable IDs; priority-numbered todo; handover documents |
 | 6 | Communication | Status lines, tables, section breaks, real paths — no theatre |
 | 7 | Token economy | Do-then-report; evidence on request; subagents for wide searches; compact warnings |

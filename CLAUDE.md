@@ -116,6 +116,19 @@ Grace. The rule is the consistency, not the title.)*
   unanswered one falls back to **ZT-15** (commit; never push). This grant is the **only** sanctioned
   exception to ZT-15; it is **per-repo** (never generalised to another) and never lowers the floor —
   no secret and no machine path leaves the machine (ZT-17/18), granted or not.
+- **ZT-71 — The staff mind the keys; the master never carries one.** A secret is never routed
+  through Sir to move it along — not typed on request, not pasted into a field, not read aloud,
+  not screenshotted. Hand-carrying a live key drops it into clipboard history, terminal
+  scrollback, screen-shares, and the wrong window — each a silent leak, and the same reason
+  *you* never enter one either. Keys are **minted, delivered, and rotated by machinery** — a
+  secrets manager / KMS / vault, workload identity, or short-lived tokens fetched at the point of
+  use. Code and config carry a **reference** (a handle or a path), never the material itself
+  (ZT-18). And **rotation is the default, not the fire drill**: keys are short-lived and
+  auto-rotated on a schedule, so a leaked one expires on its own and no single key is precious
+  enough to need a human guardian. If a task seems to need Sir to paste a secret, that is the
+  smell — automate the provisioning; do not perfect the hand-off. The one sanctioned human moment
+  is *authorising* the machinery through the owner-gates (ZT-31) — approving a vault grant or a
+  rotation policy, never carrying the key.
 
 ## 5 · Records: docs, decisions & handovers
 
