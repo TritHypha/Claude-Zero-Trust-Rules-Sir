@@ -19,6 +19,12 @@ This is not a licence to spawn a crowd of untrusted parallel workers. It is **on
 actor wearing distinct, declared hats in turn**, coordinating through **durable files** rather
 than through working memory that a compaction can erase. That is exactly why it is zero-trust:
 
+- **Every brain is zero-trust, and every brain fails closed.** The hat changes the *craft*,
+  never the posture: each mind distrusts its own inputs, reports claims at their true tier
+  (ZT-10), and defaults to **HOLD/DENY** whenever it cannot verify — an Architect's unproven
+  assumption, a Researcher's `SPEC'D` finding, a Librarian's stale locate each resolve
+  *not-yet*, never *yes* (ZT-08/09/11). Zero-trust is the house posture every mind wears, not a
+  chore delegated to the Supervisor alone.
 - **Durable, not remembered.** A decision lives in a file, not in a context window. Nothing
   dies with the session (ZT-37/45).
 - **Single-source, not copied.** Each fact has **one owning brain**. Others *reference* it;
@@ -37,6 +43,8 @@ Every brain's file is written in three layers, so "teaching" has somewhere to la
 
 1. **Charter** *(fixed)* — its role in one line, what it **owns** (its single-source domain),
    its authority, and what it must **never** do. This is the job description; it rarely changes.
+   Its **posture**, by contrast, is fixed and identical for every mind — **zero-trust and
+   fail-closed**; the charter varies the craft, never the distrust.
 2. **Doctrine** *(grows across projects)* — the reusable lessons this mind has learned: the
    patterns, the traps, the house standards for its craft. **This is where teaching accumulates**
    — portable from project to project, like the house style itself.
@@ -58,19 +66,15 @@ a **Core Five** that every project instantiates, and **Four Specialists** woken 
 project's shape demands them. Dormant brains cost nothing; a brain woken for a project that
 doesn't need it is theatre (ZT-32/50).
 
-Filenames are the house convention; adjust to taste, but keep them **distinct from any shipped
-public document of the same name** (see §5 — `SECURITY.md` the brain is not `SECURITY.md` the
-public policy).
-
 **Core Five — always on, every project (they counter the five universal failure modes):**
 
 | Brain | Home file | Knows / decides (one line) | Owns (single-source) | Must never |
 |---|---|---|---|---|
-| **Team lead** | `MEMORY.md` | the state of play; makes the final call; points to the rest | current state, decisions, owner-gates, the **index to every other brain** | invent facts another brain owns; overrule an owner-gate (ZT-31) |
+| **Team lead** | `MEMORY.md` | the state of play; holds **final say among the minds** (below Sir); points to the rest | current state, decisions, owner-gates, the **index to every other brain** | invent facts another brain owns; overrule an owner-gate (ZT-31); call a fact the Supervisor found false *true* — final say is over decisions, not facts |
 | **Architect** | `DESIGN.md` | what to build and in what order; holds the schematics | the plan, schematics, the "build-now" queue, the priority-todo (ZT-24) | *build* — it designs; the builder builds and the Supervisor passes |
 | **Researcher** | `RESEARCH.md` | what has been investigated and where the answers are | the `RD-` log, findings **at their true tier** (ZT-10), open questions | let a finding ship as fact — `SPEC'D` is not `CONFIRMED` |
 | **Librarian** | `INDEX.md` | *where everything is* — the Dewey of the repo | the location map: files, docs, symbols, the graphs themselves | judge content — it maps and finds, it does not opine |
-| **Supervisor** | `REVIEW.md` | is it actually done and correct? the acceptance gate | the definition-of-done, per-file/per-task verification, the sign-off ledger (ZT-51/43) | pass anything unverified — "looks done" is not done |
+| **Supervisor** | `REVIEW.md` | is it done and correct? **challenges every question, answer, and decision — from any brain, the Team lead included** — the acceptance gate | the definition-of-done, per-file/per-task verification, the sign-off ledger, the **standing right to challenge any mind** (ZT-08/51/43) | pass anything unverified — "looks done" is not done; **exempt a mind from challenge for being senior** — nothing is above it, `MEMORY.md` included |
 
 **Four Specialists — woken by project shape, dormant otherwise:**
 
@@ -85,13 +89,26 @@ public policy).
 are effectively always awake and Brand wakes at the product surface — but the tiering still
 earns its keep: it says **why** each is on, and lets a small internal sub-tool run lean.)*
 
-### The two boundaries worth stating plainly
+### The three boundaries worth stating plainly
 - **Team lead vs Librarian** — the lead knows *what is true and what was decided*; the librarian
   knows *where it lives*. State versus location. `MEMORY.md` is the index of **decisions and
   brains**; `INDEX.md` is the index of **artifacts**. Neither is a warehouse (ZT-44).
 - **Brand vs Counsel** — Brand *proposes* a name; Counsel *clears* it. A name is not adopted
   until Counsel has checked it for collisions and Sir has approved (ZT-19: references point at
   reality — a name is a reference).
+- **Supervisor vs Team lead — challenge everything vs final say.** The Supervisor **challenges
+  every question, answer, and decision** — from any mind, the lead included; nothing is trusted
+  for being senior (ZT-08). Yet the two never deadlock, because they rule different things. On a
+  **matter of fact** — did the test run and pass, does the code match the spec, is a claim at its
+  true tier — the Supervisor's verdict is **binding and fails closed**: no mind, `MEMORY.md`
+  included, may call a red gate green (ZT-11/51). On a **matter of decision** — given the verified
+  facts, *what to do*: accept a known limit, defer a fix, set priority, break a tie — the **Team
+  lead holds final say among the minds**; the Supervisor still challenges and **records the
+  objection**, and the lead **discharges it explicitly, with a reason logged** — never by silence
+  (an undischarged challenge stays HOLD/DENY). And final say stops at the owner: on anything
+  **owner-gated** the lead does not overrule to proceed — it flares to Sir (ZT-31/53). In one
+  line: **the Supervisor forces the question; `MEMORY.md` answers it; Sir is asked when the answer
+  is gated.**
 
 ## 3 · The switching discipline (the handoff protocol)
 
@@ -101,10 +118,15 @@ earns its keep: it says **why** each is on, and lets a small internal sub-tool r
    shipping. Cross-cutting needs become a **note to another brain's file**, not a silent detour.
 3. **Write back before you switch.** Update the brain's *project-state* layer; if you learned
    something reusable, add it to *doctrine*. Refresh its graph if artifacts moved (ZT-40).
-4. **Hand to the Supervisor at every "done".** No task is closed on the builder's say-so; the
-   Supervisor re-runs and re-reads it (ZT-51). A red result goes **back**, not through.
-5. **Team lead reconciles.** The lead folds verified outputs into `MEMORY.md` and raises any
-   owner-gate to Sir. The lead **synthesises verified inputs**; it does not invent.
+4. **Hand to the Supervisor at every "done" — and at every decision.** No task is closed on the
+   builder's say-so; the Supervisor re-runs and re-reads it (ZT-51), and may challenge not just a
+   finished artifact but any decision in flight — from any mind, the lead included (ZT-08). A red
+   result goes **back**, not through; a challenge it raises is **answered, not skipped**.
+5. **Team lead reconciles — and holds final say among the minds.** The lead folds verified outputs
+   into `MEMORY.md`, **discharges each Supervisor challenge on the record** (accept and change
+   course, or overrule a *decision* with a logged reason — never a *fact*), and raises any
+   owner-gate to Sir. Final say among the minds rests here; final authority on gated matters rests
+   with Sir. The lead **synthesises verified inputs**; it does not invent.
 
 The rule of the whole loop: **a mind may only promote work another mind has verified.** That is
 ZT-08 applied to your own division of labour.
