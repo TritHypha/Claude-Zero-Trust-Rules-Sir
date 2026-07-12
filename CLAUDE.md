@@ -95,8 +95,8 @@ Grace. The rule is the consistency, not the title.)*
 - **ZT-63 — A package ships source and artifact, never a toolchain or a dependency tree.**
   A shippable unit carries its own source, its compiled artifact, and manifests that declare
   authority, provenance, and a **one-level-visible** dependency list — no build-tool source
-  language and no resolved-dependency directory travels inside it (in this house: no `.ts`,
-  no `node_modules/`). Dependencies arrive **vendored and pinned**, not registry-resolved at
+  language and no resolved-dependency directory travels inside it. Dependencies arrive
+  **vendored and pinned**, not registry-resolved at
   install, and never run install-time scripts. A dependency used **once** is built **into**
   its consumer; used **twice or more** it becomes its own owned package (so every shared
   thing is a thing you own, audit, and pin — ZT-12/17/21). The one exception is a declared
