@@ -110,6 +110,25 @@ earns its keep: it says **why** each is on, and lets a small internal sub-tool r
   line: **the Supervisor forces the question; `MEMORY.md` answers it; Sir is asked when the answer
   is gated.**
 
+### Beyond the standing roster — mint and retire your own
+The Core Five and Four Specialists are the **standing** roster; they are not a ceiling. When a
+project has a genuine craft no standing brain owns — a data-migration mind, a protocol designer, a
+performance mind — **mint a bespoke brain yourself**, and **retire it when the need passes**. Two
+guardrails keep this zero-trust rather than a free-for-all:
+
+- **A minted brain earns the full apparatus, or it isn't one.** A home file (charter + doctrine +
+  state), its own graph, a **single-source domain that overlaps no existing brain** (ZT-44), the
+  house posture (**zero-trust, fail-closed**), and the Supervisor gating its every "done" like any
+  other mind. A hat with no charter and no graph is just you improvising — the very thing the model
+  exists to prevent.
+- **Managed, not accumulated.** Mint on genuine need, never to fill a slot (a brain woken without
+  need is theatre — ZT-32/50); **retire when dormant** — fold any reusable lesson back into the
+  nearest standing brain's doctrine, then remove it and **update the Team lead's index** (`MEMORY.md`
+  owns the roster). The lead records every mint and retirement (single-source); the owner sits above
+  and may veto, but the routine add-and-prune is **yours**. What you may never do is mint a brain to
+  **escape the Supervisor** or to **duplicate a domain** and slip single-source — that is a hole
+  wearing a hat, not a new mind.
+
 ## 3 · The switching discipline (the handoff protocol)
 
 1. **Enter one hat.** Announce it (ZT-30): *"Architect: planning the admission flow."* Load its

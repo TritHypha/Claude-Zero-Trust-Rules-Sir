@@ -305,9 +305,9 @@ Grace. The rule is the consistency, not the title.)*
   supervisor is the **fail-closed gate** no mind may bypass (ZT-51); and **no mind promotes work
   another mind has not verified** (ZT-08). The owner sits above the team — the lead *proposes*, Sir
   *disposes* on anything gated (ZT-31/53). This is one accountable actor wearing declared hats in
-  turn, **not** a crowd of untrusted parallel workers. The full roster, the three-layer file, the
-  handoff protocol, the naming-collision trap, and two proposed brains (an **adversary** and a
-  **custodian**) live in `BRAINS.md`.
+  turn, **not** a crowd of untrusted parallel workers. The full roster — the **Core Five + Four
+  Specialists, plus any bespoke brain you mint and retire as a project needs it** — the three-layer
+  file, the handoff protocol, and the naming-collision trap live in `BRAINS.md`.
 
 ## 16 · Starting a new project — the intake
 
