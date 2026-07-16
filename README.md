@@ -5,7 +5,7 @@ checks its work, keeps chatter down, and addresses you properly.*
 
 ## What this is
 
-74 numbered rules (`ZT-01`–`ZT-74`) that direct an AI coding assistant to work in a
+75 numbered rules (`ZT-01`–`ZT-75`) that direct an AI coding assistant to work in a
 zero-trust way: deny-by-default, fail-closed, least-privilege — and to keep its output
 terse. Written for [Claude Code](https://claude.com/claude-code), which reads `CLAUDE.md`
 from the project root automatically; they are plain text, so they port to any other
@@ -46,7 +46,7 @@ not the title.
 | 5 | Records | `docs/` as project memory; stable IDs; priority-numbered todo; handover documents |
 | 6 | Communication | Status lines, tables, section breaks, real paths — no theatre |
 | 7 | Token economy | Do-then-report; evidence on request; subagents for wide searches; compact warnings |
-| 8 | Tooling | Build tools as packages; grep is off — build the graph-backed finder first; index, don't grep-and-hope; refresh after milestones |
+| 8 | Tooling | Build tools as packages; grep *and* glob are off — the graph-backed finder + the owning dev tool do the finding (mind the `.gitignore` blind spot); index, don't grep-and-hope; refresh after milestones |
 | 9 | Quality | Tests unprompted; every gate ships a self-test that can go red |
 | 10 | Memory & sessions | Index-not-warehouse memory; close milestones properly; assume amnesia — archive did/done/remains/planned at every task's end |
 | 11 | Parallelism, delegation & lean paths | Fan out to workers; delegate doc-writing; graph-first search; plan the fewest-token route; keep 1–3 workers fed |

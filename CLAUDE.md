@@ -214,6 +214,20 @@ Grace. The rule is the consistency, not the title.)*
   you may not sweep. A proven house finder from a prior project may be adopted instead of
   rebuilt — the point is that *finding* goes through a tool you own, verify, and refresh
   (ZT-40), not through grep-and-hope.
+- **ZT-75 — Both built-in finders stay off; find with the house finder *and* the owning dev
+  tool — and mind the `.gitignore` blind spot.** ZT-62 matures from a project-start rule into a
+  standing one: the built-in content search (grep-style) **and** the built-in filename search
+  (glob-style) are **off for the life of the project**, and shell look-alikes — `Select-String`,
+  `findstr`, recursive directory sweeps, ad-hoc pathspec globs — are the same banned thing in a
+  different coat. Where the platform allows it, make the ban **mechanical** (deny the built-ins
+  in config): a rule enforced by machinery outlives one enforced by memory. Finding is a
+  **combination play**: the house finder answers *where is X?*; the owning dev tool — the code
+  graph, the document index, the census — answers *what is X and what touches it?* Use them
+  together rather than stretching either alone. One standing caution rides with this: an
+  index-based finder honours `.gitignore`, so **ignored artifacts — build output, env files,
+  generated reports, vendored trees — are invisible to it**. A finder miss on an ignorable path
+  is *not* evidence of absence (ZT-08): reach those by known-path read, a targeted
+  single-directory listing, or the tool that owns them.
 
 ## 9 · Quality: tests & gates
 
