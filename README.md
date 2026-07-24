@@ -13,17 +13,17 @@ assistant's project or system prompt.
 
 The rules are split for context economy: `CLAUDE.md` is a small **CORE** (the universal posture —
 the Sir Protocol, the zero-trust core, the mission & security floor, communication and token
-discipline) loaded in every session, and the rest are routed to per-role **rule-modules** under
-`brains/` (`lead.md`, `architect.md`, `researcher.md`, `librarian.md`, `supervisor.md`,
-`custodian.md`, plus charter-only `adversary.md`, `counsel.md`, `brand.md`), each read only when you
+discipline) loaded in every session, and the rest are routed to **four per-role rule-modules** under
+`brains/` — `lead.md`, `architect.md`, `supervisor.md`, `custodian.md` — each read only when you
 wear that hat. Every rule keeps its stable `ZT-` number across files (the CORE carries a rule→module
-index).
+index). The always-loaded CORE is **~9 KB** (down from the ~28 KB single file — a **68 % cut**).
 
 A companion doc, [`BRAINS.md`](BRAINS.md), expands rule `ZT-64`: how to run a project on a team of
-specialist minds — a **Core Five** (team lead, architect, researcher, librarian, supervisor) plus
-**Four Specialists** woken by project shape (adversary, custodian, counsel, brand) — each with its
-own home file, graph, and rule-module under `brains/`, handing off through durable files and gated
-by a fail-closed reviewer.
+specialist minds. The team can wear more hats than there are files — the **Architect** module also
+serves the Researcher's craft, the **Custodian** module the Librarian's, and the specialist hats
+(Adversary, Counsel, Brand) borrow from these four plus the CORE — so nine conceptual minds hand off
+through **four** rule-modules, coordinating via durable files and gated by a fail-closed reviewer
+(the Supervisor, kept deliberately separate from the doer).
 
 ## Why "Sir"?
 

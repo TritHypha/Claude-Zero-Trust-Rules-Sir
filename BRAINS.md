@@ -67,12 +67,21 @@ a **Core Five** that every project instantiates, and **Four Specialists** woken 
 project's shape demands them. Dormant brains cost nothing; a brain woken for a project that
 doesn't need it is theatre (ZT-32/50).
 
-**Two files per brain.** Each brain now has a **rule-module** under `brains/`: the Core Five's
-`brains/{lead,architect,researcher,librarian,supervisor}.md` and the Custodian's `brains/custodian.md`
-carry that hat's ZT rules and are loaded **on demand**; the charter-only `brains/{adversary,counsel,brand}.md`
-own no exclusive rule (their craft lives here in `BRAINS.md`). Separately, each brain has a **home file** —
-the `Home file` column below (`MEMORY.md`, `DESIGN.md`, …) — the brain's charter + doctrine + live-state
-memory, created per project. `CLAUDE.md`'s hat-index is the canonical Hat → Module → Home-file map.
+**Nine conceptual minds, four rule-module files** (owner 2026-07-24 — fewer files, same doctrine).
+The ZT rules live in **four** on-demand modules under `brains/`: `lead.md`, `architect.md`,
+`supervisor.md`, `custodian.md`. Several hats **share** a module rather than each carrying their own:
+
+| Mind (hat) | Reads rule-module | Home file |
+|---|---|---|
+| Team lead | `brains/lead.md` | `MEMORY.md` |
+| Architect **· Researcher** | `brains/architect.md` | `DESIGN.md` · `RESEARCH.md` |
+| Supervisor | `brains/supervisor.md` (kept separate from the doer) | `REVIEW.md` |
+| Custodian **· Librarian** | `brains/custodian.md` | `RELEASE.md` · `INDEX.md` |
+| Adversary · Counsel · Brand | *(no own file — doctrine here in `BRAINS.md`; rules borrowed: Adversary's floor `ZT-06` + boundary `ZT-14` are in the CORE)* | `THREAT.md` · `LEGAL.md` · `BRANDING.md` |
+
+Separately, each brain keeps its **home file** (`MEMORY.md`, `DESIGN.md`, …) — charter + doctrine +
+live-state memory, created per project. `CLAUDE.md`'s hat-index is the canonical Hat → Module → Home-file map.
+The roster below still names all nine minds as a *team model*; only the file count shrank.
 
 **Core Five — always on, every project (they counter the five universal failure modes):**
 
