@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zero Trust, Sir â€” the house style</title>
+<style>
+  :root {
+    --ground:#f5f6f8; --raised:#ffffff; --ink:#1b1e24; --muted:#6d7178; --faint:#9aa0a8;
+    --brass:#a97f45; --brass-ink:#8a6636; --hairline:#e4e6ea; --hairline-strong:#d3d7dd;
+    /* console â€” always dark */
+    --con:#14171c; --con-raise:#1b1f26; --con-text:#cfd3db; --con-muted:#7d8492; --con-line:#272d36;
+    --act:#d1503f; --info:#3f83bd; --ask:#3f8760;         /* on paper */
+    --act-con:#e8695a; --info-con:#5aa8db; --ask-con:#6bbd8f; /* on console */
+    --shadow:0 1px 2px rgba(20,23,28,.04), 0 8px 30px rgba(20,23,28,.06);
+    --measure:66ch;
+    --serif:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;
+    --sans:-apple-system,"Segoe UI",system-ui,Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --ground:#101318; --raised:#171b21; --ink:#e6e8ec; --muted:#9298a2; --faint:#6b7280;
+      --brass:#c6a165; --brass-ink:#d8b479; --hairline:#242a32; --hairline-strong:#2f3540;
+      --act:#e8695a; --info:#63a6da; --ask:#68b78a; --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 34px rgba(0,0,0,.34);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#101318; --raised:#171b21; --ink:#e6e8ec; --muted:#9298a2; --faint:#6b7280;
+    --brass:#c6a165; --brass-ink:#d8b479; --hairline:#242a32; --hairline-strong:#2f3540;
+    --act:#e8695a; --info:#63a6da; --ask:#68b78a; --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 34px rgba(0,0,0,.34);
+  }
+  :root[data-theme="light"]{
+    --ground:#f5f6f8; --raised:#ffffff; --ink:#1b1e24; --muted:#6d7178; --faint:#9aa0a8;
+    --brass:#a97f45; --brass-ink:#8a6636; --hairline:#e4e6ea; --hairline-strong:#d3d7dd;
+    --act:#d1503f; --info:#3f83bd; --ask:#3f8760; --shadow:0 1px 2px rgba(20,23,28,.04), 0 8px 30px rgba(20,23,28,.06);
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:var(--sans);
+    font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
+    text-underline-offset:3px;}
+  .wrap{max-width:860px;margin:0 auto;padding:clamp(1.5rem,4vw,4rem) clamp(1.1rem,4vw,2rem) 5rem;}
+  p{max-width:var(--measure);color:var(--ink);}
+  .lede,.muted{color:var(--muted);}          /* the "slightly lighter colour" text */
+  a{color:var(--brass-ink);text-decoration:underline;text-decoration-color:color-mix(in oklab,var(--brass) 45%,transparent);}
+  a:hover{text-decoration-color:var(--brass);}
+  code,.mono{font-family:var(--mono);}
+  /* inline path / code chip */
+  :not(pre)>code{font-size:.86em;background:color-mix(in oklab,var(--brass) 12%,var(--raised));
+    border:1px solid var(--hairline-strong);border-radius:5px;padding:.08em .4em;color:var(--ink);
+    white-space:nowrap;}
+
+  /* â”€â”€ masthead â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  header.mast{padding:1rem 0 2.2rem;border-bottom:1px solid var(--hairline);}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--brass-ink);display:flex;align-items:center;gap:.6rem;}
+  .eyebrow::before{content:"";width:1.6rem;height:1px;background:var(--brass);display:inline-block;}
+  h1{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;text-wrap:balance;
+    font-size:clamp(2.6rem,7vw,4.1rem);line-height:1.02;margin:.5rem 0 .1rem;}
+  h1 .dot{color:var(--brass);}
+  .valet{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.4vw,1.3rem);
+    color:var(--muted);max-width:52ch;margin:.7rem 0 0;line-height:1.4;}
+  .specimen{margin-top:1.7rem;font-family:var(--mono);font-size:.82rem;color:var(--muted);
+    background:var(--raised);border:1px solid var(--hairline);border-left:2px solid var(--brass);
+    border-radius:8px;padding:.7rem .9rem;overflow-x:auto;box-shadow:var(--shadow);}
+  .specimen b{color:var(--ink);font-weight:600;}
+
+  /* â”€â”€ section rhythm â€” generous space above every header â”€â”€ */
+  section{margin-top:4.75rem;}                 /* the "more double line space above headers" */
+  .sec-head{display:flex;align-items:baseline;gap:.85rem;margin-bottom:.3rem;}
+  .sec-num{font-family:var(--mono);font-size:.8rem;color:var(--faint);
+    font-variant-numeric:tabular-nums;}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,3.4vw,2rem);
+    letter-spacing:-.01em;text-wrap:balance;margin:0;}
+  .sec-note{color:var(--muted);margin:.35rem 0 1.4rem;}
+
+  /* â”€â”€ the console (always dark) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  .console{background:var(--con);border-radius:12px;overflow:hidden;
+    box-shadow:var(--shadow);border:1px solid var(--con-line);}
+  .con-bar{display:flex;align-items:center;gap:.5rem;padding:.6rem .9rem;
+    background:var(--con-raise);border-bottom:1px solid var(--con-line);}
+  .con-bar .tl{display:flex;gap:.4rem;}
+  .con-bar .tl i{width:.62rem;height:.62rem;border-radius:50%;background:#3a4150;display:block;}
+  .con-bar .title{font-family:var(--mono);font-size:.74rem;color:var(--con-muted);
+    letter-spacing:.03em;margin-left:.3rem;}
+  .log{font-family:var(--mono);font-size:.82rem;line-height:1.85;color:var(--con-text);
+    padding:1.05rem 1.15rem 1.2rem;overflow-x:auto;}
+  .log .row{display:block;white-space:pre;}
+  /* semantic tag â€” action / found / status */
+  .tag{display:inline-block;min-width:5.4em;font-weight:600;letter-spacing:.02em;}
+  .tag.act{color:var(--act-con);}    /* red â€” an action */
+  .tag.found{color:var(--info-con);} /* blue â€” found info */
+  .tag.stat{color:var(--con-muted);}
+  .log .path{color:var(--con-text);border-bottom:1px dotted #39424f;}
+  .log .dim{color:var(--con-muted);}
+  /* owner question â€” GREEN, header only */
+  .ask-head{color:var(--ask-con);font-weight:700;}
+  .cursor{display:inline-block;width:.55em;height:1.05em;vertical-align:-.18em;
+    background:var(--ask-con);margin-left:.15rem;animation:blink 1.15s steps(1) infinite;}
+  @keyframes blink{50%{opacity:0}}
+  @media (prefers-reduced-motion:reduce){.cursor{animation:none}}
+
+  .legend{display:flex;flex-wrap:wrap;gap:.55rem 1.4rem;margin-top:1rem;font-size:.82rem;color:var(--muted);}
+  .legend span{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--mono);}
+  .legend b{width:.7rem;height:.7rem;border-radius:3px;display:inline-block;}
+  .lg-act{background:var(--act);} .lg-found{background:var(--info);} .lg-ask{background:var(--ask);}
+
+  /* â”€â”€ table: id | name | cause | effect â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  .tbl-scroll{overflow-x:auto;border:1px solid var(--hairline);border-radius:10px;
+    box-shadow:var(--shadow);background:var(--raised);}
+  table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:640px;}
+  thead th{text-align:left;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--brass-ink);font-weight:600;
+    padding:.7rem .9rem;border-bottom:1px solid var(--hairline-strong);background:color-mix(in oklab,var(--brass) 7%,var(--raised));}
+  tbody td{padding:.72rem .9rem;border-bottom:1px solid var(--hairline);vertical-align:top;color:var(--ink);}
+  tbody tr:last-child td{border-bottom:none;}
+  td.id{font-family:var(--mono);color:var(--brass-ink);font-variant-numeric:tabular-nums;white-space:nowrap;}
+  td.name{font-weight:600;white-space:nowrap;}
+  td.cause,td.effect{color:var(--muted);}
+  td .verdict{font-family:var(--mono);font-size:.78rem;font-weight:700;}
+  .v-deny{color:var(--act);} .v-hold{color:var(--brass-ink);} .v-allow{color:var(--ask);}
+
+  /* â”€â”€ modules grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.9rem;}
+  .card{background:var(--raised);border:1px solid var(--hairline);border-radius:10px;
+    padding:1rem 1.1rem;box-shadow:var(--shadow);}
+  .card h3{font-family:var(--serif);font-size:1.12rem;font-weight:600;margin:0 0 .15rem;}
+  .card .home{font-family:var(--mono);font-size:.72rem;color:var(--brass-ink);}
+  .card p{font-size:.85rem;color:var(--muted);margin:.5rem 0 0;max-width:none;}
+  .card .count{font-family:var(--mono);font-size:.72rem;color:var(--faint);margin-top:.6rem;
+    display:block;font-variant-numeric:tabular-nums;}
+
+  footer{margin-top:5rem;padding-top:1.6rem;border-top:1px solid var(--hairline);
+    font-family:var(--mono);font-size:.76rem;color:var(--faint);display:flex;
+    justify-content:space-between;flex-wrap:wrap;gap:.6rem;}
+  .flare{color:var(--brass-ink);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div class="eyebrow">A drop-in <code style="border:none;background:none;padding:0;color:inherit">CLAUDE.md</code> for a zero-trust project</div>
+    <h1>Zero Trust, Sir<span class="dot">.</span></h1>
+    <p class="valet">The AI engineer as butler â€” quietly meticulous, faintly judgmental, and would sooner resign than commit a secret.</p>
+    <div class="specimen"><b>T&#8209;042</b> Â· Payment webhook â€” signature verification added â€” <b>Status: done</b><br>75 rules Â· CORE + four brain modules Â· loaded on demand Â· <b>68% lighter</b> per session</div>
+  </header>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>What it sounds like</h2></div>
+    <p class="sec-note">Every line is typed by its intent, so a glance sorts the work from the decisions. An <span style="color:var(--act);font-weight:600">action</span> the agent ran, a fact it <span style="color:var(--info);font-weight:600">found</span>, and the one line that needs <span style="color:var(--ask);font-weight:600">you</span> â€” each reads before it's read.</p>
+
+    <div class="console" role="img" aria-label="A colour-coded agent activity log: red actions, blue findings, a green owner question.">
+      <div class="con-bar"><span class="tl"><i></i><i></i><i></i></span><span class="title">galerina Â· session log</span></div>
+      <div class="log">
+<span class="row"><span class="tag act">Ran</span>galerina check <span class="path">payment.fungi</span> <span class="dim">â€” 0 errors, exit 0</span></span>
+<span class="row"><span class="tag found">Found</span><span class="path">FUNGI-ADMIT-001</span> at <span class="path">interpreter.ts:1591</span></span>
+<span class="row"><span class="tag stat">   Â·  </span><span class="dim">parameter 'amount' DENIED â€” predicate resolved to Unknown, not Allow</span></span>
+<span class="row"><span class="tag act">Ran</span>git commit <span class="path">-F msg.txt</span> <span class="dim">â€” KB only, owner pushes</span></span>
+<span class="row"> </span>
+<span class="row"><span class="ask-head">Sir, a question:</span></span>
+<span class="row"><span class="dim">  the webhook stores raw card PANs to speed up retries.</span></span>
+<span class="row"><span class="dim">  1. store the processor's payment token instead </span><span style="color:var(--ask-con)">(recommended)</span></span>
+<span class="row"><span class="dim">  2. encrypt PANs at rest with a rotating key</span></span>
+<span class="row"><span class="ask-head">Sir, this is a bad idea</span><span class="dim"> â€” storing PANs breaches the PCI&#8209;DSS floor (ZT&#8209;06).</span><span class="cursor"></span></span>
+      </div>
+    </div>
+
+    <div class="legend">
+      <span><b class="lg-act"></b>red â€” an action the agent took (<span class="mono">Ran</span>)</span>
+      <span><b class="lg-found"></b>blue â€” a fact it measured (<span class="mono">Found</span>)</span>
+      <span><b class="lg-ask"></b>green â€” a line for you (<span class="mono">Sir,</span> â€” header only)</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Owner gates &amp; unlocks</h2></div>
+    <p class="sec-note">Nothing that spends authority happens without a nod. Each gate is a row â€” its id, what it is, the <em>cause</em> that trips it, and the <em>effect</em> the agent takes until you rule. Verdicts are three-valued: unknown never resolves to yes.</p>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>ID</th><th>Name</th><th>Cause</th><th>Effect</th></tr></thead>
+        <tbody>
+          <tr><td class="id">G&#8209;01</td><td class="name">Secret in commit</td><td class="cause">A credential, key, or token appears in a staged diff.</td><td class="effect"><span class="verdict v-deny">DENY</span> â€” refuse the commit, flag the line, never push.</td></tr>
+          <tr><td class="id">G&#8209;02</td><td class="name">Push to remote</td><td class="cause">Work is committed and ready to leave the machine.</td><td class="effect"><span class="verdict v-hold">HOLD</span> â€” commit only; the owner performs every push.</td></tr>
+          <tr><td class="id">G&#8209;03</td><td class="name">Below the floor</td><td class="cause">An instruction drops under OWASP / PCI&#8209;DSS / GDPR.</td><td class="effect"><span class="verdict v-deny">DENY</span> â€” one <span class="flare">Sir,</span> flare with a safer alternative.</td></tr>
+          <tr><td class="id">G&#8209;04</td><td class="name">Unverifiable claim</td><td class="cause">A gate's input is missing, absent, or threw.</td><td class="effect"><span class="verdict v-hold">HOLD</span> â€” fail closed; the answer is not yes.</td></tr>
+          <tr><td class="id">G&#8209;05</td><td class="name">Evidence discharged</td><td class="cause">The check ran and passed; proof is on record.</td><td class="effect"><span class="verdict v-allow">ALLOW</span> â€” proceed, and log why.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>The rulebook, on demand</h2></div>
+    <p class="sec-note">Seventy-five numbered rules. A small always-loaded <code>CLAUDE.md</code> carries the universal posture; the craft rules wait in four modules under <code>brains/</code> and load only when the agent wears that hat â€” so nine conceptual minds hand off through four files.</p>
+    <div class="grid">
+      <div class="card"><h3>Team lead</h3><span class="home">brains/lead.md Â· MEMORY.md</span><p>State of play, owner-gates, coordination, the final say among the minds â€” below Sir.</p><span class="count">14 rules</span></div>
+      <div class="card"><h3>Architect</h3><span class="home">brains/architect.md Â· DESIGN.md</span><p>Mission, scope, build order, self-documenting code â€” and the research log at its true tier.</p><span class="count">10 rules</span></div>
+      <div class="card"><h3>Supervisor</h3><span class="home">brains/supervisor.md Â· REVIEW.md</span><p>The fail-closed acceptance gate â€” tests, self-tests, definition of done. Kept separate from the doer.</p><span class="count">5 rules</span></div>
+      <div class="card"><h3>Custodian</h3><span class="home">brains/custodian.md Â· RELEASE.md</span><p>Git, secrets, keys, packaging, the custody grant â€” and the graph-backed finder that knows where everything lives.</p><span class="count">21 rules</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Zero Trust, Sir Â· CORE + 4 modules Â· 75 rules, verbatim</span>
+    <span class="flare">Now then â€” shall we begin?</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
