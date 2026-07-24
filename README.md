@@ -3,6 +3,10 @@
 *A drop-in `CLAUDE.md` + `brains/` bundle for running a zero-trust software project with an AI
 engineer that checks its work, keeps chatter down, and addresses you properly.*
 
+**▸ See the house style — [`showcase.html`](showcase.html)** — a styled demo of what the agent's
+output looks like: colour-coded actions and findings, `Sir,` questions, and the owner-gate table.
+Open it locally, or via GitHub Pages once enabled.
+
 ## What this is
 
 75 numbered rules (`ZT-01`–`ZT-75`) that direct an AI coding assistant to work in a
