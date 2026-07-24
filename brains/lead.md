@@ -1,6 +1,6 @@
 # Team lead — MEMORY.md brain
 
-> **Role:** the state of play, owner-gates, coordination, and final say among the minds (below Sir).
+> **Role:** the state of play, owner-gates, coordination, intake, and final say among the minds (below Sir).
 > **Version:** rules ZT-01..ZT-75 stable across files · rev 2026-07-23.
 > **Loaded on demand** — read this when you wear the Team lead hat. The universal posture
 > (Sir Protocol, zero-trust core, mission & floor, comms & token) lives in `CLAUDE.md` (the CORE),

@@ -18,23 +18,22 @@ brain shares. When you take on a role, **also read that role's module** for its 
 you need only the CORE plus the one or two hats you are wearing, never all 75 rules at once.
 The **house of minds** — how the brains hand off and gate each other — is in `BRAINS.md` (ZT-64).
 
+Four modules cover the 75 rules; the wider house-of-minds (Adversary, Counsel, Brand, and the
+former Researcher/Librarian hats) is doctrine in `BRAINS.md` — those roles borrow these four
+modules' rules rather than each carrying their own file.
+
 | Hat | Module | Brain file | Holds |
 |---|---|---|---|
 | Team lead | `brains/lead.md` | `MEMORY.md` | ZT-22 · ZT-25 · ZT-31 · ZT-44 · ZT-45 · ZT-46 · ZT-47 · ZT-53 · ZT-54 · ZT-56 · ZT-57 · ZT-64 · ZT-65 · ZT-66 |
-| Architect | `brains/architect.md` | `DESIGN.md` | ZT-07 · ZT-24 · ZT-58 · ZT-59 · ZT-60 |
-| Researcher | `brains/researcher.md` | `RESEARCH.md` | ZT-23 · ZT-36 · ZT-48 · ZT-73 · ZT-74 |
-| Librarian | `brains/librarian.md` | `INDEX.md` | ZT-38 · ZT-39 · ZT-40 · ZT-41 · ZT-49 · ZT-62 · ZT-75 |
+| Architect | `brains/architect.md` | `DESIGN.md` | ZT-07 · ZT-23 · ZT-24 · ZT-36 · ZT-48 · ZT-58 · ZT-59 · ZT-60 · ZT-73 · ZT-74 |
 | Supervisor | `brains/supervisor.md` | `REVIEW.md` | ZT-42 · ZT-43 · ZT-51 · ZT-52 · ZT-55 |
-| Custodian | `brains/custodian.md` | `RELEASE.md` | ZT-15 · ZT-16 · ZT-17 · ZT-18 · ZT-19 · ZT-20 · ZT-21 · ZT-61 · ZT-63 · ZT-67 · ZT-68 · ZT-69 · ZT-70 · ZT-71 |
-| Adversary | `brains/adversary.md` | `THREAT.md` | (charter-only — see `BRAINS.md`) |
-| Counsel | `brains/counsel.md` | `LEGAL.md` | (charter-only — see `BRAINS.md`) |
-| Brand | `brains/brand.md` | `BRANDING.md` | (charter-only — see `BRAINS.md`) |
+| Custodian | `brains/custodian.md` | `RELEASE.md` | ZT-15 · ZT-16 · ZT-17 · ZT-18 · ZT-19 · ZT-20 · ZT-21 · ZT-38 · ZT-39 · ZT-40 · ZT-41 · ZT-49 · ZT-61 · ZT-62 · ZT-63 · ZT-67 · ZT-68 · ZT-69 · ZT-70 · ZT-71 · ZT-75 |
 
 **Rule → module** — ZT numbers are stable IDs across every file, so a rule may cite one that now
 lives in another module by its number and it still resolves (ZT-19):
-`CLAUDE.md` CORE — 01–06, 08–14, 26–30, 32–35, 37, 50, 72 · lead — 22, 25, 31, 44–47, 53–54, 56–57, 64–66 · architect — 07, 24, 58–60 ·
-researcher — 23, 36, 48, 73–74 · librarian — 38–41, 49, 62, 75 · supervisor — 42–43, 51–52, 55 ·
-custodian — 15–21, 61, 63, 67–71. **§N section numbers are NOT unique across files — cite by ZT number, never by §.**
+`CLAUDE.md` CORE — 01–06, 08–14, 26–30, 32–35, 37, 50, 72 · lead — 22, 25, 31, 44–47, 53–54, 56–57, 64–66 ·
+architect — 07, 23–24, 36, 48, 58–60, 73–74 · supervisor — 42–43, 51–52, 55 ·
+custodian — 15–21, 38–41, 49, 61–63, 67–71, 75. **§N section numbers are NOT unique across files — cite by ZT number, never by §.**
 
 ---
 
