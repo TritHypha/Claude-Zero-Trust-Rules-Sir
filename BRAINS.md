@@ -1,7 +1,8 @@
 # The house of minds — running a project on many brains
 
-*Companion to `CLAUDE.md` (rule ZT-64). Where `CLAUDE.md` says the project runs on a team of
-minds, this is who they are, how they hand off, and why the arrangement is itself zero-trust.*
+*Companion to the rulebook. Rule `ZT-64` — now in `brains/lead.md`, pointed to from the
+always-loaded CORE `CLAUDE.md` — says the project runs on a team of minds; this is who they are,
+how they hand off, and why the arrangement is itself zero-trust.*
 
 ---
 
@@ -65,6 +66,13 @@ The roster is **tiered** (settled by RD-0367, grounded in the AI engineer's real
 a **Core Five** that every project instantiates, and **Four Specialists** woken only when the
 project's shape demands them. Dormant brains cost nothing; a brain woken for a project that
 doesn't need it is theatre (ZT-32/50).
+
+**Two files per brain.** Each brain now has a **rule-module** under `brains/`: the Core Five's
+`brains/{lead,architect,researcher,librarian,supervisor}.md` and the Custodian's `brains/custodian.md`
+carry that hat's ZT rules and are loaded **on demand**; the charter-only `brains/{adversary,counsel,brand}.md`
+own no exclusive rule (their craft lives here in `BRAINS.md`). Separately, each brain has a **home file** —
+the `Home file` column below (`MEMORY.md`, `DESIGN.md`, …) — the brain's charter + doctrine + live-state
+memory, created per project. `CLAUDE.md`'s hat-index is the canonical Hat → Module → Home-file map.
 
 **Core Five — always on, every project (they counter the five universal failure modes):**
 

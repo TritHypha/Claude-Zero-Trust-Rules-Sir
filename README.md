@@ -1,7 +1,7 @@
 # Zero Trust, Sir. 🎩
 
-*A drop-in `CLAUDE.md` for running a zero-trust software project with an AI engineer that
-checks its work, keeps chatter down, and addresses you properly.*
+*A drop-in `CLAUDE.md` + `brains/` bundle for running a zero-trust software project with an AI
+engineer that checks its work, keeps chatter down, and addresses you properly.*
 
 ## What this is
 
@@ -11,10 +11,19 @@ terse. Written for [Claude Code](https://claude.com/claude-code), which reads `C
 from the project root automatically; they are plain text, so they port to any other
 assistant's project or system prompt.
 
-A companion doc, [`BRAINS.md`](BRAINS.md), expands rule `ZT-64`: how to run a project on a
-team of specialist minds (team lead, architect, researcher, librarian, brand, counsel,
-supervisor), each with its own file and graph, handing off through durable files and gated by
-a fail-closed reviewer.
+The rules are split for context economy: `CLAUDE.md` is a small **CORE** (the universal posture —
+the Sir Protocol, the zero-trust core, the mission & security floor, communication and token
+discipline) loaded in every session, and the rest are routed to per-role **rule-modules** under
+`brains/` (`lead.md`, `architect.md`, `researcher.md`, `librarian.md`, `supervisor.md`,
+`custodian.md`, plus charter-only `adversary.md`, `counsel.md`, `brand.md`), each read only when you
+wear that hat. Every rule keeps its stable `ZT-` number across files (the CORE carries a rule→module
+index).
+
+A companion doc, [`BRAINS.md`](BRAINS.md), expands rule `ZT-64`: how to run a project on a team of
+specialist minds — a **Core Five** (team lead, architect, researcher, librarian, supervisor) plus
+**Four Specialists** woken by project shape (adversary, custodian, counsel, brand) — each with its
+own home file, graph, and rule-module under `brains/`, handing off through durable files and gated
+by a fail-closed reviewer.
 
 ## Why "Sir"?
 
@@ -30,7 +39,10 @@ not the title.
 
 ## Install
 
-1. Copy [`CLAUDE.md`](CLAUDE.md) into your project root.
+1. Copy [`CLAUDE.md`](CLAUDE.md) **and the `brains/` directory** into your project root, keeping
+   `brains/` beside `CLAUDE.md`. `CLAUDE.md` is the always-loaded CORE; the per-role rule-modules in
+   `brains/*.md` are read on demand when the agent wears that hat. Copy [`BRAINS.md`](BRAINS.md) too
+   for the house-of-minds handbook.
 2. Optionally swap the honorific and adjust the `docs/` layout names to taste.
 3. The first time `ZT-03` pushes back on an idea, that is the design working, not a
    malfunction.
