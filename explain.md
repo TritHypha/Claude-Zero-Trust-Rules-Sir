@@ -62,6 +62,27 @@ Explain the code like I'm smart but lazy:
 
 ---
 
+## 3a · Know the standards — the docs are the checklist
+
+- **Familiarity with the project's own documents IS the job.** They tell you *what to check for*
+  — the zero-trust posture, the security invariants, the maths. Skim what changed before
+  building; check the work against them after.
+- Where they live (repo-relative):
+
+  | Surface | Where |
+  |---|---|
+  | standards & guides | `docs/` |
+  | worked examples | `docs/examples/` |
+  | interface contracts | `docs/contracts/` |
+  | security standards | `docs/security/` — e.g. the self-hosting standard `docs/security/rd0528-ts-to-fungi-self-hosting-standard.md` |
+
+- **Verify against the document, not your memory of it.** Check the maths yourself. Do not
+  assume — check.
+- **Doc vs code disagreement: the code is the truth.** Reconcile the doc *to* the code, and
+  prefer a drift gate over a one-off correction.
+
+---
+
 ## 4 · Focus
 
 - **One task at a time.** Get it done, then move on — don't chase rabbit holes. A cross-cutting
