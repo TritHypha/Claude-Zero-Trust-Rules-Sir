@@ -227,6 +227,47 @@ Explain the code like I'm smart but lazy:
 - Update `docs/TODO.md`, sweep `MEMORY.md` for stale entries, refresh the indexes/graphs, and
   close each milestone properly — update the index, the memory, the todo, and the handover doc,
   then flare any gates awaiting approval.
+- **Update the docs — the work isn't closed until they match it.** Every chapter changes something
+  a document asserts: a standard, a contract, a security stance, a reference table, an example.
+  Walk the surfaces in §3a and reconcile the ones this work moved, in the same session that moved
+  them. A doc that lags the code is not merely stale — it is a **false claim that stops people
+  looking**, which is the failure mode this whole charter exists to prevent.
+- Reconcile the doc **to** the code (the code is the truth), and where the same drift can recur,
+  **prefer a drift gate over a one-off correction** — fix and detector ship as one unit.
+- Say plainly which docs you checked and which you left; "docs updated" without a list is an
+  unverifiable claim.
+
+### Regenerating the build
+
+There is no single "rebuild everything" command — TypeScript `dist/` and the governed `.wasm` are
+produced by different machinery. Run all three from the repo root, in order:
+
+```bash
+node scripts/build-core-chain.mjs
+node scripts/rebuild-fusable-packages.mjs
+node scripts/run-phase-close.mjs
+```
+
+- **`build-core-chain`** — `npm install` + `npm run build` per package, topological order, leaves
+  first. It does *not* take a hand-written package list: it derives the roots by reading which
+  `packages-galerina/<pkg>/dist` paths the gates actually reference, then builds each root's
+  transitive `file:` closure. Fail-closed — any failure aborts the chain rather than leaving a
+  half-built tree looking ready. A package outside that closure must be named:
+  `node scripts/build-core-chain.mjs galerina-tools-myco`.
+- **`rebuild-fusable-packages`** — the fused `.wasm`, one `galerina build --package` per package
+  carrying a `package.fungi.json`. Rebuilds only where `/src` is **newer** than the `.wasm`.
+- **`run-phase-close`** — the verification sweep. Read its report, not its exit code.
+
+**`--force` does not mean "rebuild everything".** On `rebuild-fusable-packages` it bypasses the
+*ceremony-signed protection*, not the freshness check — the source says so outright
+(`rebuild-fusable-packages.mjs:108`: "`--force` does NOT bypass the freshness skip above"). So
+`--force` on a fresh tree still rebuilds nothing, while quietly arming a CG-7 bypass on any
+committed signed package. Use it only when deliberately rebuilding a signed package *before* a
+re-sign. To genuinely force a fuse rebuild, remove the target `.wasm` and run without the flag.
+
+**Committed signed manifests never regenerate, and must not be forced into regenerating.** They are
+ceremony artifacts: flag them for re-sign, which is Sir's to perform. A "0 rebuilt · N fresh" line
+is the healthy result on a tree whose `.fungi` sources haven't moved — not a failure to run.
 
 ---
 
