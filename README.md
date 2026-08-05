@@ -1,7 +1,8 @@
 # Zero Trust, Sir. 🎩
 
-*A drop-in `CLAUDE.md` + `UI.md` + `brains/` bundle for running a zero-trust software project
-with an AI engineer that checks its work, keeps chatter down, and addresses you properly.*
+*A drop-in `CLAUDE.md` + `UI.md` + `MOTIVATION.md` + `brains/` bundle for running a zero-trust
+software project with an AI engineer that checks its work, keeps chatter down, never idles, and
+addresses you properly.*
 
 **▸ See the house style — [`showcase.html`](showcase.html)** — a styled demo of what the agent's
 output looks like: colour-coded actions and findings, `Sir,` questions, and the owner-gate table.
@@ -9,7 +10,7 @@ Open it locally, or via GitHub Pages once enabled.
 
 ## What this is
 
-78 numbered rules (`ZT-01`–`ZT-78`) that direct an AI coding assistant to work in a
+86 numbered rules (`ZT-01`–`ZT-86`) that direct an AI coding assistant to work in a
 zero-trust way: deny-by-default, fail-closed, least-privilege — and to keep its output
 terse. Written for [Claude Code](https://claude.com/claude-code), which reads `CLAUDE.md`
 from the project root automatically; they are plain text, so they port to any other
@@ -17,13 +18,15 @@ assistant's project or system prompt.
 
 The rules are split for context economy: `CLAUDE.md` is a small **CORE** (the universal posture —
 the Sir Protocol, the zero-trust core, the mission & security floor, token discipline) loaded in
-every session; the **UI rules** — how every reply is shaped — live in their own file, **`UI.md`**,
-which the CORE imports so it is *also* always loaded (format rules read on demand are format rules
-ignored); and the rest are routed to **four per-role rule-modules** under `brains/` — `lead.md`,
-`architect.md`, `supervisor.md`, `custodian.md` — each read only when you wear that hat. Every rule
-keeps its stable `ZT-` number across files (the CORE carries a rule→module index). The always-loaded
-pair — CORE **~8.5 KB** + `UI.md` **~5 KB** — is **~13.5 KB**, down from the ~28 KB single file
-(roughly half), with the craft rules still off-context until their hat is worn.
+every session; the **UI rules** (`UI.md` — how every reply is shaped) and the **motivation loop**
+(`MOTIVATION.md` — the standing chores that fill idle moments) live in their own files, which the
+CORE imports so they are *also* always loaded (rules read on demand are rules ignored); and the
+rest are routed to **four per-role rule-modules** under `brains/` — `lead.md`, `architect.md`,
+`supervisor.md`, `custodian.md` — each read only when you wear that hat. Every rule keeps its
+stable `ZT-` number across files (the CORE carries a rule→module index, and `check-rules.mjs`
+enforces it). The always-loaded trio — CORE **~9 KB** + `UI.md` **~5.3 KB** + `MOTIVATION.md`
+**~7 KB** — is **~21 KB**, still about a quarter lighter than the ~28 KB single file, with the
+craft rules off-context until their hat is worn.
 
 A companion doc, [`BRAINS.md`](BRAINS.md), expands rule `ZT-64`: how to run a project on a team of
 specialist minds. The team can wear more hats than there are files — the **Architect** module also
@@ -46,11 +49,12 @@ not the title.
 
 ## Install
 
-1. Copy [`CLAUDE.md`](CLAUDE.md), [`UI.md`](UI.md), **and the `brains/` directory** into your
-   project root, keeping `UI.md` and `brains/` beside `CLAUDE.md`. `CLAUDE.md` is the always-loaded
-   CORE and imports `UI.md` (the UI rules) alongside it; the per-role rule-modules in `brains/*.md`
-   are read on demand when the agent wears that hat. Copy [`BRAINS.md`](BRAINS.md) too for the
-   house-of-minds handbook.
+1. Copy [`CLAUDE.md`](CLAUDE.md), [`UI.md`](UI.md), [`MOTIVATION.md`](MOTIVATION.md), **and the
+   `brains/` directory** into your project root, keeping them beside each other. `CLAUDE.md` is the
+   always-loaded CORE and imports `UI.md` (the UI rules) and `MOTIVATION.md` (the motivation loop)
+   alongside it; the per-role rule-modules in `brains/*.md` are read on demand when the agent wears
+   that hat. Copy [`BRAINS.md`](BRAINS.md) too for the house-of-minds handbook, and
+   [`check-rules.mjs`](check-rules.mjs) if you want the numbering self-test.
 2. Optionally swap the honorific and adjust the `docs/` layout names to taste.
 3. The first time `ZT-03` pushes back on an idea, that is the design working, not a
    malfunction.
@@ -75,6 +79,7 @@ not the title.
 | 14 | Comments & self-documenting code | File-header blocks (description / version / pointers); function + why-comments beside hard code; light-or-heavy density Sir sets at project start |
 | 15 | The house of minds | Run the project on a team of specialist brains — each a file + graph; switch between them, teach each, gate every "done" with a fail-closed reviewer (see `BRAINS.md`) |
 | 16 | Starting a new project | Day-one intake: the honorific; the technology scope; offer git + lay its files; public or private; README + `.gitignore` always; public repos wear their governance (LICENSE / SECURITY / …) |
+| 17 | The motivation loop | Own always-loaded file, `MOTIVATION.md`: never idle — the standing re-verification chores; KATs as the primary test form; a new instrument re-opens old verdicts; a fix ships with its detector; a green counts only for the axis it exercised; digressions parked, not chased; the drift check on the goal itself; refactor your own loop at every chapter's close |
 
 ## What it sounds like
 
@@ -97,7 +102,10 @@ the PCI-DSS floor (ZT-06). Safer: store the processor's payment token.
   language project — including a real incident where an audit swallowed an error in a
   `catch {}` and reported success instead of failing closed. That incident is rule ZT-11.
 - **The numbering is continuous and verified.** The original draft contained two rule 3s
-  and two rule 10s, which in a zero-trust rulebook is itself a finding.
+  and two rule 10s, which in a zero-trust rulebook is itself a finding. It is now
+  machine-checked: `node check-rules.mjs` is a known-answer test (ZT-80 applied to the
+  rulebook) that every `ZT-01..86` is defined exactly once, in the file the CORE's index
+  says, with all version lines agreeing — and it fails closed.
 - **It practices what it preaches.** The file is deliberately tight, because it is loaded
   into every session and rule ZT-32 ("no theatre") applies to rulebooks too.
 - **Format rules are a gate, not advice.** Style guidance parked mid-rulebook gets skipped

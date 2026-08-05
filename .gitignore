@@ -1,0 +1,4 @@
+# OS cruft — this is a documents repo; nothing builds, so only machine litter is ignored (ZT-69)
+Thumbs.db
+Desktop.ini
+.DS_Store

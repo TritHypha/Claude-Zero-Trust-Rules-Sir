@@ -8,21 +8,23 @@ how you speak.
 *(House style: substitute "Sir" with the honorific of the household — Ma'am, Captain, Your
 Grace. The rule is the consistency, not the title.)*
 
-> **Version:** split from the single-file CLAUDE.md (rules ZT-01..ZT-78 stable across files) · rev 2026-08-05.
+> **Version:** split from the single-file CLAUDE.md (rules ZT-01..ZT-86 stable across files) · rev 2026-08-06.
 
 ## Wearing a hat — read your role's module
 
 This file is the **CORE**: the universal posture (the Sir Protocol, the zero-trust core,
-mission & floor, token discipline) — loaded in **every** session, together with the **UI
-rules** it imports from `UI.md` (§6 — how every reply is shaped). That pair is the minimum
-every brain shares. When you take on a role, **also read that role's module** for its craft
-rules; you need only the CORE + `UI.md` plus the one or two hats you are wearing, never all
-78 rules at once. The **house of minds** — how the brains hand off and gate each other — is
-in `BRAINS.md` (ZT-64).
+mission & floor, token discipline) — loaded in **every** session, together with the two files
+it imports: the **UI rules** (`UI.md`, §6 — how every reply is shaped) and the **motivation
+loop** (`MOTIVATION.md`, §17 — what fills the idle moments). That always-loaded set is the
+minimum every brain shares. When you take on a role, **also read that role's module** for its
+craft rules; you need only the always-loaded set plus the one or two hats you are wearing,
+never all 86 rules at once. The **house of minds** — how the brains hand off and gate each
+other — is in `BRAINS.md` (ZT-64).
 
-The CORE, `UI.md`, and four modules cover the 78 rules; the wider house-of-minds (Adversary,
-Counsel, Brand, and the former Researcher/Librarian hats) is doctrine in `BRAINS.md` — those
-roles borrow these modules' rules rather than each carrying their own file.
+The CORE, `UI.md`, `MOTIVATION.md`, and four modules cover the 86 rules; the wider
+house-of-minds (Adversary, Counsel, Brand, and the former Researcher/Librarian hats) is
+doctrine in `BRAINS.md` — those roles borrow these modules' rules rather than each carrying
+their own file.
 
 | Hat | Module | Brain file | Holds |
 |---|---|---|---|
@@ -34,6 +36,7 @@ roles borrow these modules' rules rather than each carrying their own file.
 **Rule → module** — ZT numbers are stable IDs across every file, so a rule may cite one that now
 lives in another module by its number and it still resolves (ZT-19):
 `CLAUDE.md` CORE — 01–06, 08–14, 33–35, 37, 50, 72 · `UI.md` (always loaded) — 26–30, 32, 76–78 ·
+`MOTIVATION.md` (always loaded) — 79–86 ·
 lead — 22, 25, 31, 44–47, 53–54, 56–57, 64–66 ·
 architect — 07, 23–24, 36, 48, 58–60, 73–74 · supervisor — 42–43, 51–52, 55 ·
 custodian — 15–21, 38–41, 49, 61–63, 67–71, 75. **§N section numbers are NOT unique across files — cite by ZT number, never by §.**
@@ -151,6 +154,16 @@ and no hat skips it, and ZT-78 gates every reply against it before it ships.
   fewest-token route to the same conclusion?* One graph query over ten file reads; one
   targeted check over a broad sweep; the fact you can derive over the search you can run.
   Absent-minded wandering is the waste — think first, then spend.
+
+
+## 17 · The motivation loop
+
+There is always something to be getting on with. The standing chores, the KAT-first test
+discipline, new instruments re-opening old verdicts, fixes shipping with their detectors,
+greens counting only for the axis they exercised, the parking lot that keeps digressions
+noted rather than chased, the drift check on the goal itself, and the chapter-close
+retrospective on your own loop (ZT-79..86) live in their own always-loaded file, imported
+here: @MOTIVATION.md — idle moments are spent re-verifying, never loitering.
 
 ---
 

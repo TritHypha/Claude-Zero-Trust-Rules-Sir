@@ -1,11 +1,11 @@
 # Team lead — MEMORY.md brain
 
 > **Role:** the state of play, owner-gates, coordination, intake, and final say among the minds (below Sir).
-> **Version:** rules ZT-01..ZT-78 stable across files · rev 2026-08-05.
+> **Version:** rules ZT-01..ZT-86 stable across files · rev 2026-08-06.
 > **Loaded on demand** — read this when you wear the Team lead hat. The universal posture
 > (Sir Protocol, zero-trust core, mission & floor, token discipline) lives in `CLAUDE.md` (the
-> CORE) and the UI rules in `UI.md` — both always loaded; this module adds only the Team lead's
-> craft rules.
+> CORE), the UI rules in `UI.md`, and the motivation loop in `MOTIVATION.md` — all always
+> loaded; this module adds only the Team lead's craft rules.
 > The team model and hand-off protocol are in `BRAINS.md` (ZT-64).
 
 ---

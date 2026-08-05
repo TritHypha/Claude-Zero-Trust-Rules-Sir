@@ -1,11 +1,11 @@
 # Architect — DESIGN.md brain
 
 > **Role:** the mission, scope, build order, and self-documenting code — and the research log, findings at their true tier, and public-claim/crypto vocabulary (the former Researcher folds in here).
-> **Version:** rules ZT-01..ZT-78 stable across files · rev 2026-08-05.
+> **Version:** rules ZT-01..ZT-86 stable across files · rev 2026-08-06.
 > **Loaded on demand** — read this when you wear the Architect hat. The universal posture
 > (Sir Protocol, zero-trust core, mission & floor, token discipline) lives in `CLAUDE.md` (the
-> CORE) and the UI rules in `UI.md` — both always loaded; this module adds only the Architect's
-> craft rules.
+> CORE), the UI rules in `UI.md`, and the motivation loop in `MOTIVATION.md` — all always
+> loaded; this module adds only the Architect's craft rules.
 > The team model and hand-off protocol are in `BRAINS.md` (ZT-64).
 
 ---
