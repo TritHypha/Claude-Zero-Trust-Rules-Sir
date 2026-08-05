@@ -6,7 +6,9 @@
 // The known answer: rules ZT-01..ZT-86 exist, each defined exactly once, in exactly the file
 // the CORE's rule→module index says — and every rule file's version line carries the same
 // ceiling. Any drift (a deleted rule, a duplicate number, a rule moved without the index,
-// a stale version line) goes RED.
+// a stale version line) goes RED. A second gate scans every shipped document for
+// machine-absolute paths (ZT-17) — the class of leak that arrived with an adopted document
+// on 2026-08-06 and now has its detector (ZT-83: a fix and its detector are one unit).
 //
 // Run:  node check-rules.mjs      exit 0 = GREEN, exit 1 = RED (fail closed: an unreadable
 // file is a failure, never a skip).
@@ -67,5 +69,33 @@ for (let n = 1; n <= MAX; n++) {
   if (where.length > 1) fail(`${id}: defined ${where.length} times (${where.join(', ')})`);
 }
 
+// Machine-absolute paths never ship (ZT-17). Each pattern requires a real segment after the
+// prefix, so rule text that merely NAMES the ban (ZT-17's own "C:\Users\…" example, with its
+// ellipsis) does not trip it. This scanner is excluded from its own scan — it carries the
+// patterns as source.
+const PATH_FILES = [
+  ...Object.keys(EXPECTED),
+  'README.md', 'BRAINS.md', 'explain.md', 'ENGINEERING-STANDARDS.md', 'showcase.html',
+];
+const LEAKS = [
+  /\/home\/[A-Za-z0-9_-]+\//,      // POSIX home with a real username/segment
+  /\/Users\/[A-Za-z0-9_-]+\//,     // macOS home
+  /C:\\+Users\\+[A-Za-z0-9_-]+/i,  // Windows home
+  /C--Users-[A-Za-z0-9_-]+/i,      // the dash-encoded slug of the same (same leak, new coat)
+];
+for (const file of PATH_FILES) {
+  let text;
+  try {
+    text = readFileSync(join(ROOT, file), 'utf8');
+  } catch {
+    fail(`${file}: unreadable in the path-leak scan — missing shipped doc is a red gate`);
+    continue;
+  }
+  for (const rx of LEAKS) {
+    const m = text.match(rx);
+    if (m) fail(`${file}: machine-absolute path leaked: "${m[0]}"`);
+  }
+}
+
 if (red) process.exit(1); // fail closed
-console.log(`GREEN ${MAX} rules — continuous, unique, placed per the index, version lines agree.`);
+console.log(`GREEN ${MAX} rules — continuous, unique, placed per the index, version lines agree, no machine paths.`);

@@ -28,7 +28,13 @@ enforces it). The always-loaded trio — CORE **~9 KB** + `UI.md` **~5.3 KB** + 
 **~7 KB** — is **~21 KB**, still about a quarter lighter than the ~28 KB single file, with the
 craft rules off-context until their hat is worn.
 
-A companion doc, [`BRAINS.md`](BRAINS.md), expands rule `ZT-64`: how to run a project on a team of
+A companion doc, [`ENGINEERING-STANDARDS.md`](ENGINEERING-STANDARDS.md), is the house's
+engineering baseline — §0–§22 requirement classes running from zero-trust and fail-closed gates
+through anti-drift, external boundaries, and longevity, with K3 reference appendices. Where it
+overlaps the numbered rules, the rules are canon (its §15 and §17 are canonised as `ZT-86` and
+`ZT-85`); its header carries the full mapping.
+
+A second companion, [`BRAINS.md`](BRAINS.md), expands rule `ZT-64`: how to run a project on a team of
 specialist minds. The team can wear more hats than there are files — the **Architect** module also
 serves the Researcher's craft, the **Custodian** module the Librarian's, and the specialist hats
 (Adversary, Counsel, Brand) borrow from these four plus the CORE — so nine conceptual minds hand off
