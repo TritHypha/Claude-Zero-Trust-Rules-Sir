@@ -23,7 +23,8 @@ A practical baseline you can enforce from day zero. Each item is a **requirement
 ## Index
 
 - §0 — Governing principles (apply to all of the below)
-- §1 — Best possible use of Tri-1 technology
+- **Vocabulary — what the owner means by "Tri-1"**
+- §1 — Best possible use of ternary (trit · K3 · photonic)
 - §2 — Zero-trust
 - §3 — Fail-closed ⇒ always a gate
 - §4 — Security + OWASP
@@ -74,21 +75,62 @@ A cache hit, high model score, or internally consistent file must **never** crea
 
 ---
 
-## 1. Best possible use of Tri-1 technology
+## Vocabulary — what the owner means by "Tri-1"
 
-**Tri-1** = values in \(\{-1,0,+1\}\) (balanced ternary), used where they help **representation, packing, or decision encoding**—not as a mystique layer.
+**"Tri-1" is the owner's spoken shorthand, not a defined technical term.** It is a *pointer to
+the family*, and it means whichever of the three layers below the sentence is actually about.
+Resolve it from context; never carry it into a written artifact unresolved.
+
+| When the owner says "Tri-1" and is talking about… | They mean | Write it as |
+|---|---|---|
+| numbers, weights, packing, sketches, votes, storage density | a value in \(\{-1,0,+1\}\) | **trit** / **balanced ternary** |
+| gates, admission, permission, verdicts, receipts, "deny / unknown / allow" | the three-valued authority lattice | **K3** |
+| hardware, optics, the wire, signal levels, switching | three distinguishable physical levels | **photonic ternary** |
+| the whole programme at once — the house style, the family of ideas | all three, loosely | **ternary** (and then name the layer) |
+
+**Rules for the reader**
+
+1. **Ask which layer before you act.** "Make the Tri-1 part stricter" is three different tasks.
+   If context does not settle it, that is a genuine fork — ask, with the three options.
+2. **Resolve on the way in.** Spoken "Tri-1" → the precise term in code, comments, commits,
+   docs, and diagrams. Shorthand is fine in conversation and never fine in an artifact.
+3. **Never let the shorthand carry authority across layers.** The single word is exactly what
+   makes a `+1` *weight* look like an `ALLOW` *verdict*; §1 rule 2 exists because of it.
+4. **One exception — the name.** "Tri-1" as a **coined product/brand name** (as in the IP
+   table in Appendix C) is a proper noun and stays as written. Preserve it there; resolve it
+   everywhere else.
+
+---
+
+## 1. Best possible use of ternary — trits, K3, and photonic levels
+
+Three-valued thinking shows up at three **different layers**, and one word for all three is
+how representation quietly becomes permission. Name the layer you mean:
+
+| Term | Layer | Means | Legitimate use |
+|---|---|---|---|
+| **trit** / **balanced ternary** | data | a value in \(\{-1,0,+1\}\) | packing, weights, sketches, votes |
+| **K3** | authority | the three-valued lattice DENY / INDETERMINATE / ALLOW | gates, admission, receipts |
+| **photonic ternary** | physical | three distinguishable signal levels in hardware | encoding on the wire |
+
+A trit is a **number**. A K3 verdict is a **permission**. A photonic level is a **voltage or a
+pulse**. They share an arity and nothing else — a `+1` weight authorises nothing, and a K3
+`ALLOW` is not arithmetic. Use ternary where it helps **representation, packing, or decision
+encoding**; never as a mystique layer.
 
 | Use | Do | Don't |
 |---|---|---|
-| **Decision / K3-style gates** | Encode refuse / indeterminate / allow explicitly | Collapse indeterminate into allow |
+| **Decision gates (K3)** | Encode refuse / indeterminate / allow explicitly | Collapse indeterminate into allow |
 | **Compact weights / sketches** | Pack 5 trits per byte (\(3^5=243\le256\)) for storage density | Assume packing ⇒ speed or L1 residency without measurement |
 | **Feature / vote aggregation** | Ternary votes with explicit abstain (`0`) | Treat `0` as weak `+1` |
 | **Protocol flags** | Three-way status in APIs and receipts | Boolean-only APIs that hide uncertainty |
 
 **Standards**
 
-1. Document every Tri-1 domain: *what −1 / 0 / +1 mean in that field*.
-2. Keep **numeric Tri-1 weights** separate from **authority K3** (representation ≠ permission).
+1. Document every trit domain: *what −1 / 0 / +1 mean in that field*.
+2. Keep **numeric trit weights** separate from **authority K3** (representation ≠ permission) and
+   both separate from **photonic levels** (a signal level is not a verdict). One word for all
+   three is how the separation gets lost — name the layer at every mention.
 3. Prefer int8/predecode on the hot path unless a measured ternary kernel wins.
 4. Golden vectors for pack/unpack; mutation tests must fail closed on corrupt trit streams.
 
@@ -917,7 +959,7 @@ Longevity is about **survivability**, not predicting 2046’s hot language.
 4. **Speed and hardware kindness**
 5. **DX polish**
 
-Speed never overrides an open gate. Tri-1 packing never overrides measured performance or authority separation.
+Speed never overrides an open gate. Trit packing never overrides measured performance or authority separation.
 
 ---
 
@@ -1297,7 +1339,7 @@ That matches your §16 *verify, don't assume*.
 | **Patents in ML compilers, autotuning, quantized nets, OS/formal methods** | Many families exist; some assigned to companies |
 | **"I read a paper"** | Paper ≠ license to practice claimed methods if patented |
 | **"Similar to MLGO/TVM"** | Those projects' **code** is licensed; **third-party patents** can still apply |
-| **Your Tri-1 / VPEG / NSE naming** | Novelty and non-infringement are **fact-specific** |
+| **Your coined names — "Tri-1", VPEG, NSE** | Novelty and non-infringement are **fact-specific** |
 
 Earlier review threads already treated topics like NIDA/DANNA-style patents as **claim-chart / counsel** territory—not something an online review clears.
 
