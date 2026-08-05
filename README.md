@@ -1,7 +1,7 @@
 # Zero Trust, Sir. 🎩
 
-*A drop-in `CLAUDE.md` + `brains/` bundle for running a zero-trust software project with an AI
-engineer that checks its work, keeps chatter down, and addresses you properly.*
+*A drop-in `CLAUDE.md` + `UI.md` + `brains/` bundle for running a zero-trust software project
+with an AI engineer that checks its work, keeps chatter down, and addresses you properly.*
 
 **▸ See the house style — [`showcase.html`](showcase.html)** — a styled demo of what the agent's
 output looks like: colour-coded actions and findings, `Sir,` questions, and the owner-gate table.
@@ -9,18 +9,21 @@ Open it locally, or via GitHub Pages once enabled.
 
 ## What this is
 
-75 numbered rules (`ZT-01`–`ZT-75`) that direct an AI coding assistant to work in a
+78 numbered rules (`ZT-01`–`ZT-78`) that direct an AI coding assistant to work in a
 zero-trust way: deny-by-default, fail-closed, least-privilege — and to keep its output
 terse. Written for [Claude Code](https://claude.com/claude-code), which reads `CLAUDE.md`
 from the project root automatically; they are plain text, so they port to any other
 assistant's project or system prompt.
 
 The rules are split for context economy: `CLAUDE.md` is a small **CORE** (the universal posture —
-the Sir Protocol, the zero-trust core, the mission & security floor, communication and token
-discipline) loaded in every session, and the rest are routed to **four per-role rule-modules** under
-`brains/` — `lead.md`, `architect.md`, `supervisor.md`, `custodian.md` — each read only when you
-wear that hat. Every rule keeps its stable `ZT-` number across files (the CORE carries a rule→module
-index). The always-loaded CORE is **~9 KB** (down from the ~28 KB single file — a **68 % cut**).
+the Sir Protocol, the zero-trust core, the mission & security floor, token discipline) loaded in
+every session; the **UI rules** — how every reply is shaped — live in their own file, **`UI.md`**,
+which the CORE imports so it is *also* always loaded (format rules read on demand are format rules
+ignored); and the rest are routed to **four per-role rule-modules** under `brains/` — `lead.md`,
+`architect.md`, `supervisor.md`, `custodian.md` — each read only when you wear that hat. Every rule
+keeps its stable `ZT-` number across files (the CORE carries a rule→module index). The always-loaded
+pair — CORE **~8.5 KB** + `UI.md` **~5 KB** — is **~13.5 KB**, down from the ~28 KB single file
+(roughly half), with the craft rules still off-context until their hat is worn.
 
 A companion doc, [`BRAINS.md`](BRAINS.md), expands rule `ZT-64`: how to run a project on a team of
 specialist minds. The team can wear more hats than there are files — the **Architect** module also
@@ -43,10 +46,11 @@ not the title.
 
 ## Install
 
-1. Copy [`CLAUDE.md`](CLAUDE.md) **and the `brains/` directory** into your project root, keeping
-   `brains/` beside `CLAUDE.md`. `CLAUDE.md` is the always-loaded CORE; the per-role rule-modules in
-   `brains/*.md` are read on demand when the agent wears that hat. Copy [`BRAINS.md`](BRAINS.md) too
-   for the house-of-minds handbook.
+1. Copy [`CLAUDE.md`](CLAUDE.md), [`UI.md`](UI.md), **and the `brains/` directory** into your
+   project root, keeping `UI.md` and `brains/` beside `CLAUDE.md`. `CLAUDE.md` is the always-loaded
+   CORE and imports `UI.md` (the UI rules) alongside it; the per-role rule-modules in `brains/*.md`
+   are read on demand when the agent wears that hat. Copy [`BRAINS.md`](BRAINS.md) too for the
+   house-of-minds handbook.
 2. Optionally swap the honorific and adjust the `docs/` layout names to taste.
 3. The first time `ZT-03` pushes back on an idea, that is the design working, not a
    malfunction.
@@ -60,7 +64,7 @@ not the title.
 | 3 | Zero-trust core | ALLOW/HOLD/DENY, unknown ≠ yes; claims report their true tier; gates fail closed; public claims carry their evidence tier (no unearned superlatives); controlled crypto/quantum vocabulary |
 | 4 | Custody | Commit-don't-push (unless a per-project custody grant); settle git commit/push/merge custody at project start; no secrets; no machine paths; refs point at reality; deps are trust decisions; a package ships source + artifact, never a toolchain or a dependency tree; a human is never the key courier — mint, deliver, and rotate by machine |
 | 5 | Records | `docs/` as project memory; stable IDs; priority-numbered todo; handover documents |
-| 6 | Communication | Status lines, tables, section breaks, real paths — no theatre |
+| 6 | Communication — the UI rules | Own always-loaded file, `UI.md`: intent-named headers, status lines, tables, code boxes, focus symbols, real paths — no theatre; every reply passes the fail-closed ZT-78 gate before it ships |
 | 7 | Token economy | Do-then-report; evidence on request; subagents for wide searches; compact warnings |
 | 8 | Tooling | Build tools as packages; grep *and* glob are off — the graph-backed finder + the owning dev tool do the finding (mind the `.gitignore` blind spot); index, don't grep-and-hope; refresh after milestones |
 | 9 | Quality | Tests unprompted; every gate ships a self-test that can go red |
@@ -77,8 +81,11 @@ not the title.
 *Illustrative — the house format, not a record of real work:*
 
 ```text
+Working On This
 T-042 · Payment webhook — signature verification added — Status: done
 T-043 · Refund path — needs idempotency key — Status: 80%
+
+---
 
 Sir, this is a bad idea — storing card PANs to "speed up retries" breaches
 the PCI-DSS floor (ZT-06). Safer: store the processor's payment token.
@@ -93,5 +100,9 @@ the PCI-DSS floor (ZT-06). Safer: store the processor's payment token.
   and two rule 10s, which in a zero-trust rulebook is itself a finding.
 - **It practices what it preaches.** The file is deliberately tight, because it is loaded
   into every session and rule ZT-32 ("no theatre") applies to rulebooks too.
+- **Format rules are a gate, not advice.** Style guidance parked mid-rulebook gets skipped
+  under pressure — so the UI rules live in their own always-loaded file, and `ZT-78` makes
+  the format itself fail closed: a reply that fails the pre-send check is redrafted, not
+  sent.
 
 Now then — shall we begin?
