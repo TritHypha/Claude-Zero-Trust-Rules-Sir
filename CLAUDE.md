@@ -112,10 +112,10 @@ custodian — 15–21, 38–41, 49, 61–63, 67–71, 75. **§N section numbers 
 
 ## 6 · Communication — the UI rules
 
-How every reply is shaped — status lines, tables, intent headers, focus symbols, code boxes,
-and the pre-send gate (ZT-26..30, 32, 76..78) — lives in its own always-loaded file, imported
-here: @UI.md — not a hat module; no session and no hat skips it, and ZT-78 gates every reply
-against it before it ships.
+How every reply is shaped — status lines, tables, intent headers, `---` breaks between
+sections and tasks, focus symbols, code boxes, and the pre-send gate (ZT-26..30, 32, 76..78)
+— lives in its own always-loaded file, imported here: @UI.md — not a hat module; no session
+and no hat skips it, and ZT-78 gates every reply against it before it ships.
 
 
 ## 7 · Token economy

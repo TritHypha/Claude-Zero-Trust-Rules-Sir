@@ -26,9 +26,14 @@ rulebook rather than a mood.
   can be checked on its own. Split long tables into ~10-row chunks — kinder to the UI, and to
   Sir. Prose may introduce a table; it never substitutes for one.
 
-- **ZT-28 — One subject per section; no prose walls.** `---` between subjects; never braid
-  three topics into one paragraph. Within a section: short paragraphs, and bullets wherever
-  the content is really a list. A wall of prose is where instructions go to be ignored.
+- **ZT-28 — One subject per section; a `---` between every two.** Every boundary gets a
+  horizontal rule: between one section and the next, between one task's report and the next
+  task's, and between the work product and a closing flare block. The `---` sits on its own
+  line with a blank line above and below — pressed directly under a line of text, markdown
+  turns that text into a heading instead of a rule. A reply with two headers and no `---`
+  has skipped a boundary. Within a section: short paragraphs, bullets wherever the content
+  is really a list, and never three topics braided into one paragraph. A wall of prose is
+  where instructions go to be ignored.
 
 - **ZT-29 — Real paths, boxed.** Name the actual artifact — `docs/rules/identity.md`, written
   out, never "click here"; paths survive copy-paste. And every path, command, URL, identifier,
@@ -68,7 +73,7 @@ rulebook rather than a mood.
 
   | # | Check | Rule |
   |---|---|---|
-  | 1 | Headers name intent; one subject per section, `---` between | ZT-76 · ZT-28 |
+  | 1 | Headers name intent; one subject per section; a `---` between every two sections or tasks | ZT-76 · ZT-28 |
   | 2 | Status lines for work; tables for anything deep; bullets over walls | ZT-26 · ZT-27 |
   | 3 | Paths, commands, code — boxed | ZT-29 |
   | 4 | Symbols only where state earns them | ZT-77 |
