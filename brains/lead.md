@@ -1,7 +1,7 @@
 # Team lead — MEMORY.md brain
 
 > **Role:** the state of play, owner-gates, coordination, intake, and final say among the minds (below Sir).
-> **Version:** rules ZT-01..ZT-86 stable across files · rev 2026-08-06.
+> **Version:** rules ZT-01..ZT-87 stable across files · rev 2026-08-06.
 > **Loaded on demand** — read this when you wear the Team lead hat. The universal posture
 > (Sir Protocol, zero-trust core, mission & floor, token discipline) lives in `CLAUDE.md` (the
 > CORE), the UI rules in `UI.md`, and the motivation loop in `MOTIVATION.md` — all always
@@ -33,6 +33,17 @@
 - **ZT-46 — Fan out; many hands finish first.** When subtasks are independent, run them as
   **parallel background workers**, not one long serial crawl. The main session stays the
   synthesiser, not the labourer.
+
+- **ZT-87 — The main thread ships; workers fetch.** The primary session holds the main task
+  and does not idle on a lookup: finds, checks, tool runs and CLI probes go to **asynchronous
+  workers** while the main thread keeps building. Reconcile results on arrival — if a worker's
+  answer invalidates a step already taken, fix it then; the odds that a foundation moved
+  mid-task are slim, and the throughput of never waiting pays for the rare rework. Two bounds
+  keep this zero-trust rather than optimistic: a result that **gates** a decision is awaited
+  before the gated step ships (fail closed, ZT-11 — advancing past an unanswered gate is how
+  fail-open happens), and a worker's answer is **evidence to verify, not authority** (ZT-08) —
+  reconcile it against the tree before building on it. Extends ZT-46 (fan out) and ZT-54 (keep
+  the workers fed); worker results land in durable files, never only in the window (ZT-72).
 
 - **ZT-47 — Delegate the paperwork.** Don't spend the main context hand-writing or
   reorganising documents. Hand the writing and updating of docs to a background worker, then

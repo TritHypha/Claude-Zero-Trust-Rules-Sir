@@ -1,7 +1,7 @@
 # Custodian — RELEASE.md brain
 
 > **Role:** git, secrets, packaging, keys, day-one scaffolding, the custody grant — and tooling, the graph-backed finder, and where everything is (the former Librarian folds in here).
-> **Version:** rules ZT-01..ZT-86 stable across files · rev 2026-08-06.
+> **Version:** rules ZT-01..ZT-87 stable across files · rev 2026-08-06.
 > **Loaded on demand** — read this when you wear the Custodian hat. The universal posture
 > (Sir Protocol, zero-trust core, mission & floor, token discipline) lives in `CLAUDE.md` (the
 > CORE), the UI rules in `UI.md`, and the motivation loop in `MOTIVATION.md` — all always

@@ -17,7 +17,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = dirname(fileURLToPath(import.meta.url)); // repo root = this script's directory
-const MAX = 86; // the rule ceiling — the single number the whole known answer hangs off
+const MAX = 87; // the rule ceiling — the single number the whole known answer hangs off
 
 // The expected placement per file. This table IS the known answer, kept deliberately in
 // sync with the CORE's rule→module index — if either drifts, the test goes red.
@@ -27,7 +27,8 @@ const EXPECTED = {
   'CLAUDE.md':            [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 33, 34, 35, 37, 44, 50, 72],
   'UI.md':                [26, 27, 28, 29, 30, 32, 76, 77, 78],
   'MOTIVATION.md':        [79, 80, 81, 82, 83, 84, 85, 86],
-  'brains/lead.md':       [22, 25, 31, 45, 46, 47, 53, 54, 56, 57, 64, 65, 66],
+  // ZT-87 added 2026-08-06 (owner concept, refactored): the main thread ships; workers fetch.
+  'brains/lead.md':       [22, 25, 31, 45, 46, 47, 53, 54, 56, 57, 64, 65, 66, 87],
   'brains/architect.md':  [7, 23, 24, 36, 48, 58, 59, 60, 73, 74],
   'brains/supervisor.md': [42, 43, 51, 52, 55],
   'brains/custodian.md':  [15, 16, 17, 18, 19, 20, 21, 38, 39, 40, 41, 49, 61, 62, 63, 67, 68, 69, 70, 71, 75],
