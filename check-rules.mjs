@@ -76,6 +76,7 @@ for (let n = 1; n <= MAX; n++) {
 const PATH_FILES = [
   ...Object.keys(EXPECTED),
   'README.md', 'BRAINS.md', 'explain.md', 'ENGINEERING-STANDARDS.md', 'showcase.html',
+  'LICENSE', // scanned like any shipped doc — and its absence is a red gate (ZT-70)
 ];
 const LEAKS = [
   /\/home\/[A-Za-z0-9_-]+\//,      // POSIX home with a real username/segment

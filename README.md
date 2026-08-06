@@ -119,4 +119,8 @@ the PCI-DSS floor (ZT-06). Safer: store the processor's payment token.
   the format itself fail closed: a reply that fails the pre-send check is redrafted, not
   sent.
 
+## License
+
+[Apache License 2.0](LICENSE).
+
 Now then — shall we begin?
