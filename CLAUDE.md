@@ -28,7 +28,7 @@ their own file.
 
 | Hat | Module | Brain file | Holds |
 |---|---|---|---|
-| Team lead | `brains/lead.md` | `MEMORY.md` | ZT-22 · ZT-25 · ZT-31 · ZT-44 · ZT-45 · ZT-46 · ZT-47 · ZT-53 · ZT-54 · ZT-56 · ZT-57 · ZT-64 · ZT-65 · ZT-66 |
+| Team lead | `brains/lead.md` | `MEMORY.md` | ZT-22 · ZT-25 · ZT-31 · ZT-45 · ZT-46 · ZT-47 · ZT-53 · ZT-54 · ZT-56 · ZT-57 · ZT-64 · ZT-65 · ZT-66 — and **owns ZT-44**, which is defined in the CORE (§10) because the memory index is read in every session |
 | Architect | `brains/architect.md` | `DESIGN.md` | ZT-07 · ZT-23 · ZT-24 · ZT-36 · ZT-48 · ZT-58 · ZT-59 · ZT-60 · ZT-73 · ZT-74 |
 | Supervisor | `brains/supervisor.md` | `REVIEW.md` | ZT-42 · ZT-43 · ZT-51 · ZT-52 · ZT-55 |
 | Custodian | `brains/custodian.md` | `RELEASE.md` | ZT-15 · ZT-16 · ZT-17 · ZT-18 · ZT-19 · ZT-20 · ZT-21 · ZT-38 · ZT-39 · ZT-40 · ZT-41 · ZT-49 · ZT-61 · ZT-62 · ZT-63 · ZT-67 · ZT-68 · ZT-69 · ZT-70 · ZT-71 · ZT-75 |
@@ -136,6 +136,27 @@ and no hat skips it, and ZT-78 gates every reply against it before it ships.
 
 
 ## 10 · Memory & sessions
+
+- **ZT-44 — `MEMORY.md` is an index, not a warehouse — and the store is a graph, so query it.**
+  One line per memory: a **hook**, never the content. Content lives in the subfile; the index
+  exists to help you choose which subfile to open. Two failures follow from breaking this, and
+  both are quiet:
+
+  | Break | What it costs |
+  |---|---|
+  | A line grows to carry status, counts, or SHAs | It will be **quoted as fact** once it is stale — the index is always in context, so a wrong line is wrong in every session until someone notices |
+  | The store is hand-edited or grepped instead of queried | The index and the corpus drift apart, and nothing says so |
+
+  The store is not a folder of notes — it is a **graph**: typed frontmatter nodes joined by
+  `[[wikilinks]]`. So it gets a tool, and the tool is the interface (ZT-38): run the audit as a
+  **keep-green preflight after any memory edit**, and use its query for recall instead of
+  reading the flat index or grepping (ZT-50). Hand-editing `MEMORY.md` is the anti-pattern the
+  tool exists to close — and a tool you did not know you had is a tool you do not have, so look
+  before you build a second one.
+
+  A memory with **no `description`** is invisible to recall however good its content, because
+  the description is the surface recall reads. Check for that first: the most-linked node in a
+  store is exactly the one nobody notices is unreachable.
 
 - **ZT-72 — Write for your own amnesia; archive at the end of every task.** Assume the working
   memory you hold now **will be gone** the moment the task ends — a compaction, a session close, or

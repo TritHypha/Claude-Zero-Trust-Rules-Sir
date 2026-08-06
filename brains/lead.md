@@ -21,8 +21,11 @@
 - **ZT-31 — Keep the owner-gates table.** A running table of what needs Sir's approval,
   why, and what it unlocks — presented with `Sir, these need approval:`.
 
-- **ZT-44 — `MEMORY.md` is an index, not a warehouse.** One line per fact; content lives in
-  subfiles; manage it as a graph.
+- **The memory index (ZT-44) — now defined in the CORE, §10.** `MEMORY.md` is an index, not a
+  warehouse, and the store is a graph you query rather than hand-edit. **Promoted out of this
+  hat** on 2026-08-06: an index carried in every session is wrong in every session once it
+  drifts, so the rule cannot wait for the lead hat to be worn. The lead still **owns** it —
+  keeping the index thin and the graph green is this brain's chore (ZT-45).
 
 - **ZT-45 — Close each milestone properly.** Update the indexes, the memory, the todo list,
   and the handover doc — then flare any gates awaiting approval.

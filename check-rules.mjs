@@ -22,10 +22,12 @@ const MAX = 86; // the rule ceiling — the single number the whole known answer
 // The expected placement per file. This table IS the known answer, kept deliberately in
 // sync with the CORE's rule→module index — if either drifts, the test goes red.
 const EXPECTED = {
-  'CLAUDE.md':            [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 33, 34, 35, 37, 50, 72],
+  // ZT-44 moved lead.md -> CLAUDE.md on 2026-08-06: the memory index is read in every session,
+  // so the rule governing it cannot live in a hat module that is only sometimes loaded.
+  'CLAUDE.md':            [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 33, 34, 35, 37, 44, 50, 72],
   'UI.md':                [26, 27, 28, 29, 30, 32, 76, 77, 78],
   'MOTIVATION.md':        [79, 80, 81, 82, 83, 84, 85, 86],
-  'brains/lead.md':       [22, 25, 31, 44, 45, 46, 47, 53, 54, 56, 57, 64, 65, 66],
+  'brains/lead.md':       [22, 25, 31, 45, 46, 47, 53, 54, 56, 57, 64, 65, 66],
   'brains/architect.md':  [7, 23, 24, 36, 48, 58, 59, 60, 73, 74],
   'brains/supervisor.md': [42, 43, 51, 52, 55],
   'brains/custodian.md':  [15, 16, 17, 18, 19, 20, 21, 38, 39, 40, 41, 49, 61, 62, 63, 67, 68, 69, 70, 71, 75],
