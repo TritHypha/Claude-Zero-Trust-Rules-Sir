@@ -10,7 +10,7 @@ Open it locally, or via GitHub Pages once enabled.
 
 ## What this is
 
-86 numbered rules (`ZT-01`–`ZT-86`) that direct an AI coding assistant to work in a
+89 numbered rules (`ZT-01`–`ZT-89`) that direct an AI coding assistant to work in a
 zero-trust way: deny-by-default, fail-closed, least-privilege — and to keep its output
 terse. Written for [Claude Code](https://claude.com/claude-code), which reads `CLAUDE.md`
 from the project root automatically; they are plain text, so they port to any other
@@ -74,7 +74,7 @@ not the title.
 | 3 | Zero-trust core | ALLOW/HOLD/DENY, unknown ≠ yes; claims report their true tier; gates fail closed; public claims carry their evidence tier (no unearned superlatives); controlled crypto/quantum vocabulary |
 | 4 | Custody | Commit-don't-push (unless a per-project custody grant); settle git commit/push/merge custody at project start; no secrets; no machine paths; refs point at reality; deps are trust decisions; a package ships source + artifact, never a toolchain or a dependency tree; a human is never the key courier — mint, deliver, and rotate by machine |
 | 5 | Records | `docs/` as project memory; stable IDs; priority-numbered todo; handover documents |
-| 6 | Communication — the UI rules | Own always-loaded file, `UI.md`: intent-named headers, status lines, tables, code boxes, focus symbols, real paths — no theatre; every reply passes the fail-closed ZT-78 gate before it ships |
+| 6 | Communication — the UI rules | Own always-loaded file, `UI.md`: intent-named headers, status lines, tables, code boxes, focus symbols, real paths, direct owner answers, honest action status, and production-web standards — no theatre; every reply passes the fail-closed ZT-78 gate before it ships |
 | 7 | Token economy | Do-then-report; evidence on request; subagents for wide searches; compact warnings |
 | 8 | Tooling | Build tools as packages; grep *and* glob are off — the graph-backed finder + the owning dev tool do the finding (mind the `.gitignore` blind spot); index, don't grep-and-hope; refresh after milestones |
 | 9 | Quality | Tests unprompted; every gate ships a self-test that can go red |

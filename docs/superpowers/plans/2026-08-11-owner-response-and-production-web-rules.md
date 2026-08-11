@@ -28,8 +28,8 @@
 - Consumes: the rule definitions and version lines in the seven rule files.
 - Produces: a fail-closed 89-rule continuity, placement, version, path-leak, and semantic-clause gate.
 
-- [ ] Raise `MAX` to 89, place rules 88 and 89 in `UI.md`, and add exact semantic-clause assertions.
-- [ ] Run `node check-rules.mjs` before adding the definitions and retain the expected red result.
+- [x] Raise `MAX` to 89, place rules 88 and 89 in `UI.md`, and add exact semantic-clause assertions.
+- [x] Run `node check-rules.mjs` before adding the definitions and retain the expected red result.
 
 ### Task 2: Add the two always-loaded rules
 
@@ -46,10 +46,10 @@
 - Consumes: the stable numbered-rule registry enforced by `check-rules.mjs`.
 - Produces: `ZT-88` and `ZT-89` in the always-loaded communication surface.
 
-- [ ] Add the exact direct-answer/action-status/unsafe-request contract as `ZT-88`.
-- [ ] Add the exact production-web contract as `ZT-89`.
-- [ ] Update all rule-file ceiling lines and CORE routing/count prose to 89.
-- [ ] Run `node check-rules.mjs` and require green.
+- [x] Add the exact direct-answer/action-status/unsafe-request contract as `ZT-88`.
+- [x] Add the exact production-web contract as `ZT-89`.
+- [x] Update all rule-file ceiling lines and CORE routing/count prose to 89.
+- [x] Run `node check-rules.mjs` and require green.
 
 ### Task 3: Reconcile the public description and close
 
@@ -61,6 +61,6 @@
 - Consumes: the verified 89-rule rulebook.
 - Produces: an accurate public count and concise capability summary.
 
-- [ ] Replace the stale 86-rule claim with 89 and describe both new guarantees.
-- [ ] Re-run the KAT, inspect the exact diff, and check off this plan only after every requirement is evidenced.
-- [ ] Commit the explicit files locally and do not push.
+- [x] Replace the stale 86-rule claim with 89 and describe both new guarantees.
+- [x] Re-run the KAT, inspect the exact diff, and check off this plan only after every requirement is evidenced.
+- [x] Commit the explicit files locally and do not push.
