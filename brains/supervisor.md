@@ -1,7 +1,7 @@
 # Supervisor — REVIEW.md brain
 
 > **Role:** the fail-closed acceptance gate — tests, self-tests, and the definition of done, kept SEPARATE from the doer (zero-trust separation of duties).
-> **Version:** rules ZT-01..ZT-89 stable across files · rev 2026-08-11.
+> **Version:** rules ZT-01..ZT-91 stable across files · rev 2026-08-13.
 > **Loaded on demand** — read this when you wear the Supervisor hat. The universal posture
 > (Sir Protocol, zero-trust core, mission & floor, token discipline) lives in `CLAUDE.md` (the
 > CORE), the UI rules in `UI.md`, and the motivation loop in `MOTIVATION.md` — all always

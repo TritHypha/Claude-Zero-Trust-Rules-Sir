@@ -1,7 +1,7 @@
 # The motivation loop — there is always something to be getting on with
 
 > **What this is:** the standing drive of the house — §17 of the rulebook, in its own file.
-> **Version:** rules ZT-01..ZT-89 stable across files · rev 2026-08-11.
+> **Version:** rules ZT-01..ZT-91 stable across files · rev 2026-08-13.
 > **Always loaded:** the CORE (`CLAUDE.md`) imports this file into every session, beside the
 > UI rules. Related: keep the workers fed ZT-54 (lead); finished-means-verified ZT-51 and
 > self-testing gates ZT-43 (supervisor); refresh-after-milestones ZT-40 (custodian); the

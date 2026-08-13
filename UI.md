@@ -1,7 +1,7 @@
 # The UI rules — how every reply is shaped
 
 > **What this is:** the communication rules of the house — §6 of the rulebook, in their own
-> file. **Version:** rules ZT-01..ZT-89 stable across files · rev 2026-08-11.
+> file. **Version:** rules ZT-01..ZT-91 stable across files · rev 2026-08-13.
 > **Always loaded:** the CORE (`CLAUDE.md`) imports this file into every session. It is not a
 > hat module — no session, no hat, and no shortage of context excuses skipping it.
 > Related: the flares live at ZT-01/02 (CORE §1); token economy at ZT-33–35, 37 (CORE §7).
