@@ -72,6 +72,8 @@ Each row must contain:
 
 No destination rule may exist without a manifest row. No source rule may silently disappear. A source change invalidates affected rows until re-adjudicated. Multiple skills may reference one canonical shared rule, but they may not carry separate copies of its body.
 
+This manifest governs rules imported from the ZT source rulebook. Suite-native adapter contracts cite this design specification and their owning tool contracts directly; they do not receive invented ZT identifiers.
+
 ## Transfer policy
 
 The following source ideas transfer only through adaptation:
@@ -109,6 +111,21 @@ Active user, system, and repository instructions always outrank suite defaults.
 Locates and retrieves Galerina/SLIDE/VOK/Lyth R&D through the maintained KB index and graph. It returns exact durable locators, privacy/custody status, source build point, and evidence classification. It never treats an indexed hit as the document body or an ingested transcript as an adopted conclusion.
 
 This is deliberately project-specific and does not trigger for unrelated knowledge bases.
+
+The skill ships one small deterministic query adapter. It supports:
+
+- exact `RD-####` resolution;
+- topic and bounded RD-range queries;
+- explicit supersession chains and current-decision status;
+- lookup of an RD's entries in `research/RD-TODO-MAP.md`;
+- public and permitted-private custody without collapsing the two;
+- handoff of cross-repository code-impact questions to `codex-querying-galerina-graphs`.
+
+The adapter consumes KB-owned generated metadata indexes. Public results come from the public flat/corpus indexes. Private topic results come only from a permitted private metadata index generated and retained inside the KB repository. That private index contains repository-relative paths, titles, headings, decision-state metadata, terms, digests, and build provenance; it contains no document bodies. The skill repository never stores a copy of the private index.
+
+Results distinguish `CURRENT`, `SUPERSEDED`, `AMBIGUOUS`, `PRIVATE`, `MISSING`, and `STALE`. Custody, decision state, and freshness remain separate fields even when the top-level status selects the most important one. A private current decision therefore reports private custody and current decision state rather than laundering `PRIVATE` into `CURRENT`.
+
+Output is limited to RD identifiers, repository-relative paths, headings, section locators, TODO references, supersession edges, digests, and provenance. Opening body text remains a separate bounded read from the owning KB source.
 
 ### `codex-index-is-a-graph-not-a-warehouse`
 
@@ -156,13 +173,13 @@ When two functional skills materially conflict, the operation refuses or records
 Implementation proceeds one skill at a time:
 
 1. repair and verify the source rulebook;
-2. author and validate the complete adoption manifest;
-3. build shared provenance and shadow validators;
-4. pressure-test and deploy `codex-zero-trust-engineering`;
-5. pressure-test and deploy `codex-zero-trust-review`;
-6. pressure-test and deploy `codex-zero-trust-project-operations`;
-7. pressure-test and deploy `codex-index-is-a-graph-not-a-warehouse`;
-8. pressure-test and deploy `codex-querying-galerina-rd`;
+2. create the standalone repository and build shared provenance and shadow validators;
+3. pressure-test and deploy `codex-querying-galerina-rd` as the infrastructure pilot; it adopts no ZT rule and creates no implementation authority;
+4. author and validate the complete ZT adoption manifest;
+5. pressure-test and deploy `codex-zero-trust-engineering`;
+6. pressure-test and deploy `codex-zero-trust-review`;
+7. pressure-test and deploy `codex-zero-trust-project-operations`;
+8. pressure-test and deploy `codex-index-is-a-graph-not-a-warehouse`;
 9. pressure-test and optionally deploy `codex-zero-trust-house-style`.
 
 The next skill does not start until the current skill’s RED baseline, GREEN behavior, regression tests, duplicate/shadow checks, and live deployment validation are recorded.
@@ -184,7 +201,11 @@ The suite requires deterministic tests for:
 - commit-versus-push custody;
 - exact-path staging in a dirty worktree;
 - source change invalidating a destination rule;
-- missing external adapter returning a typed refusal rather than fabricated evidence.
+- missing external adapter returning a typed refusal rather than fabricated evidence;
+- exact RD-0855 resolving to private custody and its generated TODO-map references;
+- a public current RD, an explicitly superseded RD, a duplicate-number ambiguity, a missing RD, and a stale private-index build point;
+- topic and range queries returning metadata locators without document body text;
+- cross-repository impact questions being handed off rather than answered from R&D metadata.
 
 Pressure tests must first demonstrate at least one plausible failure without the skill, then demonstrate the corrected behavior with it. A self-test that cannot turn red is not evidence.
 
