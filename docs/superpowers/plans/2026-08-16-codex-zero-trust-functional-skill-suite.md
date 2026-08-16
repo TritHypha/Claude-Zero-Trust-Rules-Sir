@@ -30,76 +30,76 @@ into a skill.
 
 ## Task 1 - lock the design and source evidence
 
-- [ ] Add the communication/UI separation to the approved design.
-- [ ] Correct stale source-rule count prose.
-- [ ] Run the source rulebook checker and its known-answer tests.
-- [ ] Commit the bounded source-design unit with explicit pathspecs.
+- [x] Add the communication/UI separation to the approved design.
+- [x] Correct stale source-rule count prose.
+- [x] Run the source rulebook checker and its known-answer tests.
+- [x] Commit the bounded source-design unit with explicit pathspecs.
 
 ## Task 2 - build the adoption manifest red first
 
-- [ ] Add a failing known-answer test for 91 unique source rules, exact source locators,
+- [x] Add a failing known-answer test for 91 unique source rules, exact source locators,
   digests, dispositions, one canonical owner, declared consumers, and test IDs.
-- [ ] Add controlled duplicate-owner, missing-rule, stale-digest, unowned-destination,
+- [x] Add controlled duplicate-owner, missing-rule, stale-digest, unowned-destination,
   optional-trigger, and shadow-rule negatives.
-- [ ] Implement the machine-readable manifest and validator.
-- [ ] Generate a human-readable adoption matrix from the same manifest.
-- [ ] Prove the complete manifest against the source build point.
+- [x] Implement the machine-readable manifest and validator.
+- [x] Generate a human-readable adoption matrix from the same manifest.
+- [x] Prove the complete manifest against the source build point.
 
 ## Task 3 - engineering skill
 
-- [ ] Capture a fresh-context RED baseline for unsafe implementation advice.
-- [ ] Create the skill through the Codex skill scaffold.
-- [ ] Add only the bounded engineering reference needed for adopted rules.
-- [ ] Prove fail-closed scope, authority, evidence-tier, and verification behavior.
-- [ ] Validate, shadow-check, install, and commit before starting the next skill.
+- [x] Capture a fresh-context RED baseline for unsafe implementation advice.
+- [x] Create the skill through the Codex skill scaffold.
+- [x] Add only the bounded engineering reference needed for adopted rules.
+- [x] Prove fail-closed scope, authority, evidence-tier, and verification behavior.
+- [x] Validate, shadow-check, install, and commit before starting the next skill.
 
 ## Task 4 - independent review skill
 
-- [ ] Capture a fresh-context RED baseline that accepts a non-red-capable gate or fixes
+- [x] Capture a fresh-context RED baseline that accepts a non-red-capable gate or fixes
   findings without authority.
-- [ ] Create and validate the review-only skill.
-- [ ] Prove KAT, adversarial-control, claim-calibration, duplicate-finding, and PASS/refusal
+- [x] Create and validate the review-only skill.
+- [x] Prove KAT, adversarial-control, claim-calibration, duplicate-finding, and PASS/refusal
   behavior.
-- [ ] Validate, shadow-check, install, and commit.
+- [x] Validate, shadow-check, install, and commit.
 
 ## Task 5 - project operations skill
 
-- [ ] Capture a RED baseline covering dirty-worktree custody, broad staging, push ambiguity,
+- [x] Capture a RED baseline covering dirty-worktree custody, broad staging, push ambiguity,
   and stale index claims.
-- [ ] Create and validate the operations skill.
-- [ ] Prove exact path staging, owner gates, generated-artifact boundaries, handoff records,
+- [x] Create and validate the operations skill.
+- [x] Prove exact path staging, owner gates, generated-artifact boundaries, handoff records,
   graph refresh receipts, and commit-versus-push separation.
-- [ ] Validate, shadow-check, install, and commit.
+- [x] Validate, shadow-check, install, and commit.
 
 ## Task 6 - communication skill
 
-- [ ] Capture a RED baseline that either interrupts for trivial choices or silently crosses a
+- [x] Capture a RED baseline that either interrupts for trivial choices or silently crosses a
   material owner gate.
-- [ ] Create the communication skill with an explicit decision ladder: autonomous progress,
+- [x] Create the communication skill with an explicit decision ladder: autonomous progress,
   non-blocking disclosure, focused clarification, owner-gated pause, and evidence-backed
   challenge.
-- [ ] Prove it asks one minimum sufficient question, states why authority is needed, offers
+- [x] Prove it asks one minimum sufficient question, states why authority is needed, offers
   safer alternatives when challenging, and never hides a material stop inside progress text.
-- [ ] Prove it does not trigger UI or house style.
-- [ ] Validate, shadow-check, install, and commit.
+- [x] Prove it does not trigger UI or house style.
+- [x] Validate, shadow-check, install, and commit.
 
 ## Task 7 - UI skill
 
-- [ ] Capture a RED baseline for misleading completion state, ornamental formatting, and
+- [x] Capture a RED baseline for misleading completion state, ornamental formatting, and
   presentation rules that alter technical conclusions.
-- [ ] Create the neutral UI skill.
-- [ ] Prove answer-first output, truthful done/in-progress/blocked states, compact status,
+- [x] Create the neutral UI skill.
+- [x] Prove answer-first output, truthful done/in-progress/blocked states, compact status,
   readable paths and tables, accessibility labels, and narrow handoff to product-design work.
-- [ ] Prove it never introduces an honorific or owner gate.
-- [ ] Validate, shadow-check, install, and commit.
+- [x] Prove it never introduces an honorific or owner gate.
+- [x] Validate, shadow-check, install, and commit.
 
 ## Task 8 - optional house-style skill
 
-- [ ] Capture a RED baseline where the source honorific protocol leaks into an ordinary task.
-- [ ] Create the opt-in style skill.
-- [ ] Prove dormancy unless explicitly named or enabled by repository instruction.
-- [ ] Prove it cannot change verdicts, custody, owner gates, or evidence claims.
-- [ ] Validate, shadow-check, install, and commit.
+- [x] Capture a RED baseline where the source honorific protocol leaks into an ordinary task.
+- [x] Create the opt-in style skill.
+- [x] Prove dormancy unless explicitly named or enabled by repository instruction.
+- [x] Prove it cannot change verdicts, custody, owner gates, or evidence claims.
+- [x] Validate, shadow-check, install, and commit.
 
 ## Task 9 - integrated closure
 
