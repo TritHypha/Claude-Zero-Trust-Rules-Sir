@@ -8,6 +8,25 @@
 
 **Tech Stack:** Node.js ESM, `node:test`, JSON metadata indexes, Git CLI for build-point provenance, Codex Agent Skills.
 
+## Execution receipt — COMPLETE (2026-08-16)
+
+- Source rulebook gate repair: `d81771a` (`5/5`, direct `GREEN 91 rules`).
+- KB custody-separated metadata indexes and TODO provenance: `eb9377b` (`10/10` focused
+  tests; 518 public plus 78 private numbered metadata records; no body fields).
+- Standalone suite foundation and resolver slices: `e16002e`, `02a86b0`, `4b07922`,
+  `534751f`, `32d5923`, `05c05e8`.
+- Final suite verification: `24/24` tests, `gold 12/12`, skill-suite audit clean, Agent Skills
+  validator green, exact/shadow scan clean.
+- Live RD-0855 acceptance: locator `PRIVATE/AMBIGUOUS` without private metadata; permitted
+  `PRIVATE/CURRENT`; four Galerina/SLIDE TODO locators; no body field.
+- Observed host timings: loaded exact `1.08 ms`, loaded topic `23.50 ms`, cold exact CLI
+  `319.83 ms`. These are host-bound observations, not portable performance authority.
+- Active installation is a junction to the suite-owned skill directory; no skill or private
+  index was copied.
+- No repository was pushed. The KB-wide path gate still reports the pre-existing absolute
+  links in `ai-reviews/reports/Antigravity-02-gate-v4-adr002-adversarial-review-PRIVATE.md`;
+  this implementation did not alter or waive that unrelated debt.
+
 ## Global Constraints
 
 - Repair and verify the source rulebook's ZT-91 known answer before creating the skill.
