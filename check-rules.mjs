@@ -3,7 +3,7 @@
 // Version: rev 2026-08-11 · Pointers: CLAUDE.md (the rule→module index this test enforces),
 // MOTIVATION.md ZT-80 (why KATs), brains/supervisor.md ZT-43 (every gate ships a self-test).
 //
-// The known answer: rules ZT-01..ZT-89 exist, each defined exactly once, in exactly the file
+// The known answer: rules ZT-01..ZT-91 exist, each defined exactly once, in exactly the file
 // the CORE's rule→module index says — and every rule file's version line carries the same
 // ceiling. Any drift (a deleted rule, a duplicate number, a rule moved without the index,
 // a stale version line) goes RED. A second gate scans every shipped document for
@@ -17,14 +17,14 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = dirname(fileURLToPath(import.meta.url)); // repo root = this script's directory
-const MAX = 89; // the rule ceiling — the single number the whole known answer hangs off
+const MAX = 91; // the rule ceiling — the single number the whole known answer hangs off
 
 // The expected placement per file. This table IS the known answer, kept deliberately in
 // sync with the CORE's rule→module index — if either drifts, the test goes red.
 const EXPECTED = {
   // ZT-44 moved lead.md -> CLAUDE.md on 2026-08-06: the memory index is read in every session,
   // so the rule governing it cannot live in a hat module that is only sometimes loaded.
-  'CLAUDE.md':            [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 33, 34, 35, 37, 44, 50, 72],
+  'CLAUDE.md':            [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 33, 34, 35, 37, 44, 50, 72, 90, 91],
   'UI.md':                [26, 27, 28, 29, 30, 32, 76, 77, 78, 88, 89],
   'MOTIVATION.md':        [79, 80, 81, 82, 83, 84, 85, 86],
   // ZT-87 added 2026-08-06 (owner concept, refactored): the main thread ships; workers fetch.

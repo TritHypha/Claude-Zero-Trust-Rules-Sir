@@ -10,7 +10,7 @@ Open it locally, or via GitHub Pages once enabled.
 
 ## What this is
 
-89 numbered rules (`ZT-01`–`ZT-89`) that direct an AI coding assistant to work in a
+91 numbered rules (`ZT-01`–`ZT-91`) that direct an AI coding assistant to work in a
 zero-trust way: deny-by-default, fail-closed, least-privilege — and to keep its output
 terse. Written for [Claude Code](https://claude.com/claude-code), which reads `CLAUDE.md`
 from the project root automatically; they are plain text, so they port to any other
