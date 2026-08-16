@@ -103,12 +103,23 @@ into a skill.
 
 ## Task 9 - integrated closure
 
-- [ ] Run every known-answer, pressure, trigger-isolation, provenance, and shadow test.
-- [ ] Run the source rulebook gate again.
-- [ ] Verify each active junction resolves into the tested standalone repository.
-- [ ] Verify the source, suite, and surrounding checkout statuses independently.
-- [ ] Refresh the source and suite code graphs and verify indexed heads.
-- [ ] Record local commit IDs and explicitly state that nothing was pushed.
+- [x] Run every known-answer, pressure, trigger-isolation, provenance, and shadow test.
+- [x] Run the source rulebook gate again.
+- [x] Verify each active junction resolves into the tested standalone repository.
+- [x] Verify the source, suite, and surrounding checkout statuses independently.
+- [x] Refresh the source and suite code graphs and verify indexed heads.
+- [x] Record local commit IDs and explicitly state that nothing was pushed.
+
+### Closure evidence
+
+- Source-rulebook commits: `c47723b` (design/source repair) and `ea08691` (implementation progress).
+- Standalone-suite commits: `5426c05`, `17ed1df`, `0c7bd2f`, `93d4d12`, `e183b87`,
+  `4e9b7b3`, `a9f2232`, and `1ec100f`.
+- Suite verification: 55/55 before the final audit-negative additions; final full run is required at handoff.
+- Source verification: 5/5 known-answer tests plus `GREEN 91 rules`.
+- Seven active junctions resolve into the standalone suite, including the existing R&D query adapter.
+- The source and suite repositories were clean; unrelated surrounding-checkout changes were preserved.
+- No push, pull request, marketplace publication, or public exposure was performed.
 
 ## Acceptance
 
