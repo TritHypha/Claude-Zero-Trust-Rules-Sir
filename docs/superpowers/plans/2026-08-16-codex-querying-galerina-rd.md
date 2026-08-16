@@ -189,7 +189,7 @@ The generator must:
 - derive `custody` from the owning directory;
 - sort by RD number then path;
 - write public and private outputs separately;
-- include `format`, `generatedBy`, `kbHead`, `builtAt`, `sourceSetDigest`, and `documentCount`;
+- include `format`, `generatedBy`, `observedKbHead`, stable `sourceCommit` (the latest commit touching the indexed RD directories), `builtAt`, `sourceSetDigest`, and `documentCount`;
 - refuse an empty corpus, duplicate output paths, absolute paths, or a private entry in the public output;
 - support `--selftest`, `--dry-run`, and apply modes.
 
@@ -308,7 +308,7 @@ test('a duplicate number is ambiguous', async () => {
 });
 
 test('a build-point mismatch is stale', async () => {
-  const out = await queryFixture({ mode: 'exact', rd: 'RD-0855' }, { kbHead: 'different' });
+  const out = await queryFixture({ mode: 'exact', rd: 'RD-0855' }, { sourceCommit: 'different' });
   assert.equal(out.status, 'STALE');
 });
 ```
@@ -330,7 +330,7 @@ Result envelope:
   status: 'PRIVATE',
   query: { mode: 'exact', value: 'RD-0855' },
   freshness: 'FRESH',
-  kbHead: '1111111111111111111111111111111111111111',
+  sourceCommit: '1111111111111111111111111111111111111111',
   results: [{
     rd: 'RD-0855',
     custody: 'PRIVATE',
@@ -347,7 +347,7 @@ Result envelope:
 }
 ```
 
-Load both indexes only when private access is permitted. `locator` mode may report the curated private path and `PRIVATE` status but must omit private headings, sections, state, terms, and digest. Compare each loaded index's `kbHead` with the current KB Git HEAD; a mismatch makes the query `STALE` before ranking. Parse the TODO-map build points and mark a requested TODO relation stale when its KB, Galerina, or SLIDE source head no longer matches.
+Load both indexes only when private access is permitted. `locator` mode may report the curated private path and `PRIVATE` status but must omit private headings, sections, state, terms, and digest. Compare each loaded index's `sourceCommit` with the latest commit touching the same RD source directories and refuse dirty tracked RD paths; a mismatch makes the query `STALE` before ranking. `observedKbHead` is provenance, not the freshness oracle. Parse the TODO-map build points and mark a requested TODO relation stale when its Galerina or SLIDE TODO source commit no longer matches.
 
 - [ ] **Step 4: Implement range and TODO parsing**
 
