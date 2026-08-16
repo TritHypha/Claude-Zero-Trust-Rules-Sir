@@ -114,8 +114,8 @@ into a skill.
 
 - Source-rulebook commits: `c47723b` (design/source repair) and `ea08691` (implementation progress).
 - Standalone-suite commits: `5426c05`, `17ed1df`, `0c7bd2f`, `93d4d12`, `e183b87`,
-  `4e9b7b3`, `a9f2232`, and `1ec100f`.
-- Suite verification: 55/55 before the final audit-negative additions; final full run is required at handoff.
+  `4e9b7b3`, `a9f2232`, `1ec100f`, and `b86bad2`.
+- Suite verification: 59/59 final tests plus a clean suite audit and independent re-review.
 - Source verification: 5/5 known-answer tests plus `GREEN 91 rules`.
 - Seven active junctions resolve into the standalone suite, including the existing R&D query adapter.
 - The source and suite repositories were clean; unrelated surrounding-checkout changes were preserved.
