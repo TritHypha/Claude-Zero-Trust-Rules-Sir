@@ -110,7 +110,7 @@ the PCI-DSS floor (ZT-06). Safer: store the processor's payment token.
 - **The numbering is continuous and verified.** The original draft contained two rule 3s
   and two rule 10s, which in a zero-trust rulebook is itself a finding. It is now
   machine-checked: `node check-rules.mjs` is a known-answer test (ZT-80 applied to the
-  rulebook) that every `ZT-01..86` is defined exactly once, in the file the CORE's index
+  rulebook) that every `ZT-01..91` is defined exactly once, in the file the CORE's index
   says, with all version lines agreeing — and it fails closed.
 - **It practices what it preaches.** The file is deliberately tight, because it is loaded
   into every session and rule ZT-32 ("no theatre") applies to rulebooks too.

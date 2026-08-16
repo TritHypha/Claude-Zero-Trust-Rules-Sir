@@ -28,6 +28,8 @@ codex-zero-trust-rules/
     codex-zero-trust-engineering/
     codex-zero-trust-review/
     codex-zero-trust-project-operations/
+    codex-zero-trust-communication/
+    codex-zero-trust-ui/
     codex-querying-galerina-rd/
     codex-index-is-a-graph-not-a-warehouse/
     codex-zero-trust-house-style/
@@ -106,6 +108,29 @@ Applies repository operations and custody: explicit path staging, dirty-worktree
 
 Active user, system, and repository instructions always outrank suite defaults.
 
+### `codex-zero-trust-communication`
+
+Applies owner-contact and decision-escalation rules: when to continue autonomously, when to
+ask one focused question, when to report a material finding without stopping, when an owner
+gate must pause work, and how to challenge unsafe or contradictory instructions with evidence
+and safer alternatives.
+
+It owns the decision to involve the owner, not the visual shape of the response. Routine
+progress narration, honorifics, fixed headings, tables, colours, and presentation conventions
+belong elsewhere. It must not turn low-risk implementation details into approval gates or hide
+material security, custody, scope, or irreversible-action decisions inside status prose.
+
+### `codex-zero-trust-ui`
+
+Applies neutral user-interface and response-presentation rules: answer-first ordering, truthful
+action state, compact status lines, intent-named headings, suitable tables, readable paths,
+accessible state labels, and production UI quality when the task is genuinely UI work.
+
+It does not decide whether owner authority is required and cannot change a technical verdict.
+It contains no honorific or mandatory "Sir" protocol. Product-design or accessibility work is
+handed to the narrowest applicable design skill; this skill only supplies the zero-trust
+presentation floor and pre-send consistency checks.
+
 ### `codex-querying-galerina-rd`
 
 Locates and retrieves Galerina/SLIDE/VOK/Lyth R&D through the maintained KB index and graph. It returns exact durable locators, privacy/custody status, source build point, and evidence classification. It never treats an indexed hit as the document body or an ingested transcript as an adopted conclusion.
@@ -152,6 +177,8 @@ The generic skill owns query orchestration and result semantics, not external en
 Optional presentation-only skill for the source rulebook’s tone, honorific, and rigid reporting conventions. It activates only when explicitly named or enabled by a repository instruction.
 
 It cannot change technical conclusions, evidence requirements, safety behavior, or custody.
+It may decorate output produced under the communication and UI skills, but it cannot trigger
+either skill, create a new owner gate, or suppress an existing one.
 
 ## Trigger isolation and precedence
 
@@ -179,8 +206,10 @@ Implementation proceeds one skill at a time:
 5. pressure-test and deploy `codex-zero-trust-engineering`;
 6. pressure-test and deploy `codex-zero-trust-review`;
 7. pressure-test and deploy `codex-zero-trust-project-operations`;
-8. pressure-test and deploy `codex-index-is-a-graph-not-a-warehouse`;
-9. pressure-test and optionally deploy `codex-zero-trust-house-style`.
+8. pressure-test and deploy `codex-zero-trust-communication`;
+9. pressure-test and deploy `codex-zero-trust-ui`;
+10. pressure-test and deploy `codex-index-is-a-graph-not-a-warehouse`;
+11. pressure-test and optionally deploy `codex-zero-trust-house-style`.
 
 The next skill does not start until the current skill’s RED baseline, GREEN behavior, regression tests, duplicate/shadow checks, and live deployment validation are recorded.
 
@@ -192,6 +221,10 @@ The suite requires deterministic tests for:
 - source locator and digest integrity;
 - conflict precedence against user and repository instructions;
 - trigger isolation between all skills;
+- communication decisions that distinguish autonomous progress, non-blocking disclosure,
+  focused clarification, owner-gated pause, and evidence-backed pushback;
+- UI decisions that preserve truthful state without activating house style or inventing owner
+  gates;
 - optional house style remaining dormant unless explicitly enabled;
 - graph-first behavior with bounded fallback;
 - all six query statuses;
